@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Payments should render when no transaction is present 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  padding: 0 0.5rem;
+}
+
+.c2 {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  width: 100%;
+}
+
+.c3 {
+  border: 2px solid transparent;
+  border-left-color: #333;
+  border-radius: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: block;
+  -webkit-animation: keep-spinning 500ms infinite;
+  animation: keep-spinning 500ms infinite;
+}
+
+.c1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+<div>
+  <section>
+    <header
+      class="c0"
+    >
+      <h2
+        class="c1"
+      >
+        Payments
+      </h2>
+      <div
+        class=""
+      >
+        <select
+          class="c2"
+        >
+          <option
+            value="en"
+          >
+            🇬🇧
+          </option>
+          <option
+            value="fr"
+          >
+            🇫🇷
+          </option>
+        </select>
+      </div>
+    </header>
+    <div
+      class="c3"
+    />
+  </section>
+</div>
+`;
+
+exports[`Payments should render when transactions are present 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  padding: 0 0.5rem;
+}
+
+.c2 {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  width: 100%;
+}
+
+.c3 {
+  border: 2px solid transparent;
+  border-left-color: #333;
+  border-radius: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: block;
+  -webkit-animation: keep-spinning 500ms infinite;
+  animation: keep-spinning 500ms infinite;
+}
+
+.c1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+<div>
+  <section>
+    <header
+      class="c0"
+    >
+      <h2
+        class="c1"
+      >
+        Payments
+      </h2>
+      <div
+        class=""
+      >
+        <select
+          class="c2"
+        >
+          <option
+            value="en"
+          >
+            🇬🇧
+          </option>
+          <option
+            value="fr"
+          >
+            🇫🇷
+          </option>
+        </select>
+      </div>
+    </header>
+    <div
+      class="c3"
+    />
+  </section>
+</div>
+`;

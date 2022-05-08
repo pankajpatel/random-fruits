@@ -1,0 +1,12 @@
+import styled from "styled-components"
+
+export const Spinner = styled.div`
+  border: 2px solid transparent;
+  border-left-color: #333;
+  border-radius: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: block;
+  animation: keep-spinning 500ms infinite;
+`;
+

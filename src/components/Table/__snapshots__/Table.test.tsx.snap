@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table should render without crashing 1`] = `
+.c0 {
+  border-collapse: collapse;
+}
+
+.c2 {
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.c2:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.c2:hover {
+  background-color: #eee;
+}
+
+.c3 {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.c1 {
+  padding: 0.75rem;
+  text-align: left;
+}
+
+<div>
+  <table
+    class="c0"
+  >
+    <thead>
+      <tr>
+        <th
+          class="c1"
+        >
+          Customer Name
+        </th>
+        <th
+          class="c1"
+        >
+          Created On
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="c2"
+        title="Click open Payment Details"
+      >
+        <td
+          class="c3"
+        >
+          Émile Zola
+        </td>
+        <td
+          class="c3"
+        >
+          04/04/2022
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

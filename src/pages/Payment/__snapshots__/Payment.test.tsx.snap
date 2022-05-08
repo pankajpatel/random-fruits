@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Payment should render without crashing 1`] = `
+.c1 {
+  border: 2px solid transparent;
+  border-left-color: #333;
+  border-radius: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: block;
+  -webkit-animation: keep-spinning 500ms infinite;
+  animation: keep-spinning 500ms infinite;
+}
+
+.c0 {
+  font-weight: normal;
+  background-color: #eee;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  font-style: italic;
+}
+
+<div>
+  <section>
+    <h2>
+      Payment
+       
+      <code
+        class="c0"
+      >
+        payment_i2NJhL
+      </code>
+    </h2>
+    <hr />
+    <div
+      class="c1"
+    />
+  </section>
+</div>
+`;

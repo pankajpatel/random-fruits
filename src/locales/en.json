@@ -1,0 +1,9 @@
+{
+  "status.ready": "Ready",
+  "status.not_started": "Not started",
+  "status.paid": "Paid",
+  "status.in_progress": "In progress",
+  "status.default": "Defaulted",
+  "page.payments.title": "Payments",
+  "page.payment.title": "Payment"
+}

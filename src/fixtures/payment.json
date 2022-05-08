@@ -1,0 +1,83 @@
+{
+  "status": "ready",
+  "id": "payment_i2NJhL",
+  "created": 1649023200000,
+  "customer_name": "Émile Zola",
+  "merchant": {
+    "name": "Super Merchant"
+  },
+  "amount": 356050,
+  "installmentsCount": 10,
+  "paymentPlan": [
+    {
+      "id": "installment_1",
+      "due_date": 1649023200000,
+      "status": "ready",
+      "amount": 35555,
+      "fee": 500
+    },
+    {
+      "id": "installment_2",
+      "due_date": 1651615200000,
+      "status": "not_started",
+      "amount": 35555,
+      "fee": 0
+    },
+    {
+      "id": "installment_3",
+      "due_date": 1654293600000,
+      "status": "not_started",
+      "amount": 35555,
+      "fee": 0
+    },
+    {
+      "id": "installment_4",
+      "due_date": 1656885600000,
+      "status": "not_started",
+      "amount": 35555,
+      "fee": 0
+    },
+    {
+      "id": "installment_5",
+      "due_date": 1659564000000,
+      "status": "not_started",
+      "amount": 35555,
+      "fee": 0
+    },
+    {
+      "id": "installment_6",
+      "due_date": 1662242400000,
+      "status": "not_started",
+      "amount": 35555,
+      "fee": 0
+    },
+    {
+      "id": "installment_7",
+      "due_date": 1664834400000,
+      "status": "not_started",
+      "amount": 35555,
+      "fee": 0
+    },
+    {
+      "id": "installment_8",
+      "due_date": 1667516400000,
+      "status": "not_started",
+      "amount": 35555,
+      "fee": 0
+    },
+    {
+      "id": "installment_9",
+      "due_date": 1670108400000,
+      "status": "not_started",
+      "amount": 35555,
+      "fee": 0
+    },
+    {
+      "id": "installment_10",
+      "due_date": 1672786800000,
+      "status": "not_started",
+      "amount": 35555,
+      "fee": 0
+    }
+  ]
+}

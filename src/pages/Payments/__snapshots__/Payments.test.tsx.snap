@@ -1,6 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Payments should render when no transaction is present 1`] = `
+.c3 {
+  border: 2px solid transparent;
+  border-left-color: #333;
+  border-radius: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: block;
+  margin: 0.25rem;
+  -webkit-animation: keep-spinning 500ms infinite;
+  animation: keep-spinning 500ms infinite;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -27,17 +39,6 @@ exports[`Payments should render when no transaction is present 1`] = `
   border: 1px solid #ccc;
   border-radius: 0.25rem;
   width: 100%;
-}
-
-.c3 {
-  border: 2px solid transparent;
-  border-left-color: #333;
-  border-radius: 50%;
-  width: 1.2rem;
-  height: 1.2rem;
-  display: block;
-  -webkit-animation: keep-spinning 500ms infinite;
-  animation: keep-spinning 500ms infinite;
 }
 
 .c1 {
@@ -74,6 +75,12 @@ exports[`Payments should render when no transaction is present 1`] = `
         </select>
       </div>
     </header>
+    <div>
+      <input
+        placeholder="Filter Payments"
+        type="text"
+      />
+    </div>
     <div
       class="c3"
     />
@@ -82,6 +89,18 @@ exports[`Payments should render when no transaction is present 1`] = `
 `;
 
 exports[`Payments should render when transactions are present 1`] = `
+.c3 {
+  border: 2px solid transparent;
+  border-left-color: #333;
+  border-radius: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: block;
+  margin: 0.25rem;
+  -webkit-animation: keep-spinning 500ms infinite;
+  animation: keep-spinning 500ms infinite;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -108,17 +127,6 @@ exports[`Payments should render when transactions are present 1`] = `
   border: 1px solid #ccc;
   border-radius: 0.25rem;
   width: 100%;
-}
-
-.c3 {
-  border: 2px solid transparent;
-  border-left-color: #333;
-  border-radius: 50%;
-  width: 1.2rem;
-  height: 1.2rem;
-  display: block;
-  -webkit-animation: keep-spinning 500ms infinite;
-  animation: keep-spinning 500ms infinite;
 }
 
 .c1 {
@@ -155,6 +163,12 @@ exports[`Payments should render when transactions are present 1`] = `
         </select>
       </div>
     </header>
+    <div>
+      <input
+        placeholder="Filter Payments"
+        type="text"
+      />
+    </div>
     <div
       class="c3"
     />

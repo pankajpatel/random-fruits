@@ -1,9 +1,10 @@
+import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 
 import { get } from "../api";
 
 export const usePayment = (id: string) => {
-  return useQuery<Payment, unknown>(
+  const paymentQuery = useQuery<Payment, unknown>(
     ["payment", id],
     () => get(`/payments/${id}`),
     {
@@ -11,4 +12,16 @@ export const usePayment = (id: string) => {
       retry: false,
     }
   );
+
+  const { data } = paymentQuery;
+
+  const [payment, setPayment] = useState<Payment | undefined>();
+  useEffect(() => {
+    data && setPayment(data);
+  }, [data]);
+
+  return {
+    ...paymentQuery,
+    payment,
+  };
 };

@@ -1,10 +1,10 @@
 import { render } from "@testing-library/react";
 import { Payment } from "./Payment";
 
-import { mockEndpoint, MockableHTTPMethods } from "../../testing/api-mocks";
-import { withProviders } from "../../testing/provider-setup";
+import { mockEndpoint, MockableHTTPMethods } from "@app/testing/api-mocks";
+import { withProviders } from "@app/testing/provider-setup";
 
-import mockPaymentJSON from "../../fixtures/payment.json";
+import mockPaymentJSON from "@app/fixtures/payment.json";
 
 const mockPayment = {
   id: "payment_i2NJhL",

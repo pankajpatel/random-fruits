@@ -1,20 +1,23 @@
 import { FormattedMessage } from "react-intl";
-import styled from "styled-components";
 import { useLocation } from "wouter";
 
-import { Badge } from "../../components/Badge";
-import { PageHeader } from "../../components/PageHeader";
-import { Select } from "../../components/Select";
-import { Spinner } from "../../components/Spinner";
-import { Table, TableCell } from "../../components/Table/Table";
-import { SORT_DIRECTIONS } from "../../constants/sorting";
-import { usePayments } from "../../hooks/usePayments";
-import { getBadgeColorForStatus } from "../../utils/getBadgeColorForStatus";
+import { Badge } from "@app/ds/Badge";
+import { Spinner } from "@app/ds/Spinner";
+import { Table, TableCell } from "@app/ds/Table/Table";
+import { SORT_DIRECTIONS } from "@app/constants/sorting";
+import { usePayments } from "@app/hooks/usePayments";
+import { getBadgeColorForStatus } from "@app/utils/getBadgeColorForStatus";
+import { PageHeader } from "@app/components/PageHeader/PageHeader";
 
-const CellConfig: Array<TableCell> = [
+const CellConfig: Array<TableCell<PaymentInList>> = [
   {
     label: "Customer Name",
     key: "customer_name",
+  },
+  {
+    label: "Merchant",
+    key: "merchant",
+    render: (row: PaymentInList) => row.merchant.name,
   },
   {
     label: "Amount",
@@ -25,9 +28,7 @@ const CellConfig: Array<TableCell> = [
   {
     label: "On",
     key: "created",
-    render: (row: PaymentInList) => (
-      <>{new Date(row.created).toLocaleDateString()}</>
-    ),
+    render: (row: PaymentInList) => new Date(row.created).toLocaleDateString(),
   },
   {
     label: "Status",
@@ -44,39 +45,30 @@ const CellConfig: Array<TableCell> = [
   },
 ];
 
-const H2 = styled.h2`
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-`;
-
 export const Payments = (): JSX.Element => {
-  const { payments, isError, isLoading, sortRows } = usePayments();
+  const { payments, isError, isLoading, sortRows, filter } = usePayments();
 
-  const [, redirect] = useLocation();
+  const [, gotTo] = useLocation();
   return (
     <section>
       <PageHeader>
-        <H2>
-          <FormattedMessage
-            id="pages.payments.title"
-            defaultMessage="Payments"
-          />
-        </H2>
-        <Select>
-          <option value="en">🇬🇧</option>
-          <option value="fr">🇫🇷</option>
-        </Select>
+        <FormattedMessage id="pages.payments.title" defaultMessage="Payments" />
       </PageHeader>
+      <div>
+        <input
+          type="text"
+          placeholder="Filter Payments"
+          onChange={(e) => filter(e.target.value)}
+        />
+      </div>
       {isLoading && <Spinner />}
       {isError && <div>Failed to load</div>}
       {!isLoading && !isError && payments.length ? (
         <Table
           rows={payments}
           cells={CellConfig}
-          onRowClick={(row) => redirect(`/payments/${row.id}`)}
-          onHeaderClick={(key: string) => {
-            console.log(payments);
-
+          onRowClick={(row: PaymentInList) => gotTo(`/payments/${row.id}`)}
+          onHeaderClick={(key: keyof PaymentInList) => {
             sortRows(key as keyof PaymentInList, SORT_DIRECTIONS.ASC);
           }}
         />

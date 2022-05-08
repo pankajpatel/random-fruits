@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { Payments } from './Payments';
 
-import { withProviders } from "../../testing/provider-setup";
+import { withProviders } from "@app/testing/provider-setup";
 
 describe('Payments', () => {
   it('should render when no transaction is present', () => {

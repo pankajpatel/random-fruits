@@ -1,7 +1,16 @@
 import { render } from "@testing-library/react";
-import { Table } from "./Table";
+import { Table, TableCell } from "./Table";
 
-const mockConfig = [
+type MockRow = {
+  status: string;
+  id: string;
+  created: number;
+  customer_name: string;
+  amount: number;
+  installmentsCount: number;
+};
+
+const mockConfig: TableCell<MockRow>[] = [
   {
     label: "Customer Name",
     key: "customer_name",
@@ -9,7 +18,7 @@ const mockConfig = [
   {
     label: "Created On",
     key: "created",
-    render: (row: any) => <>{new Date(row.created).toLocaleDateString()}</>,
+    render: (row: MockRow) => <>{new Date(row.created).toLocaleDateString()}</>,
   },
 ];
 
@@ -18,16 +27,15 @@ const mockRow = {
   id: "payment_i2NJhL",
   created: 1649023200000,
   customer_name: "Émile Zola",
-  merchant: {
-    name: "Super Merchant",
-  },
   amount: 356050,
   installmentsCount: 10,
 };
 
 describe("Table", () => {
   it("should render without crashing", () => {
-    const { container } = render(<Table cells={mockConfig} rows={[mockRow]} />);
+    const { container } = render(
+      <Table cells={mockConfig} rows={[mockRow]} />
+    );
     expect(container).toMatchSnapshot();
   });
 });

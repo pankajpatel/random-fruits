@@ -1,3 +1,7 @@
+declare module "craco-alias";
+
+type Locale = "en" | "fr";
+
 type Status =
   | "not_started"
   | "ready"
@@ -7,7 +11,7 @@ type Status =
   | "pending"
   | "paid"
   | "cancelled"
-  | 'default';
+  | "default";
 
 interface Merchant {
   name: string;

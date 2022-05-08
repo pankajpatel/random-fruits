@@ -1,18 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Payment should render without crashing 1`] = `
-.c1 {
-  border: 2px solid transparent;
-  border-left-color: #333;
-  border-radius: 50%;
-  width: 1.2rem;
-  height: 1.2rem;
-  display: block;
-  -webkit-animation: keep-spinning 500ms infinite;
-  animation: keep-spinning 500ms infinite;
-}
-
-.c0 {
+.c2 {
   font-weight: normal;
   background-color: #eee;
   border-radius: 0.25rem;
@@ -20,20 +9,88 @@ exports[`Payment should render without crashing 1`] = `
   font-style: italic;
 }
 
+.c4 {
+  border: 2px solid transparent;
+  border-left-color: #333;
+  border-radius: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: block;
+  margin: 0.25rem;
+  -webkit-animation: keep-spinning 500ms infinite;
+  animation: keep-spinning 500ms infinite;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  padding: 0 0.5rem;
+}
+
+.c3 {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  width: 100%;
+}
+
+.c1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 <div>
   <section>
-    <h2>
-      Payment
-       
-      <code
-        class="c0"
+    <header
+      class="c0"
+    >
+      <h2
+        class="c1"
       >
-        payment_i2NJhL
-      </code>
-    </h2>
-    <hr />
+        Payment
+         
+        <code
+          class="c2"
+        >
+          payment_i2NJhL
+        </code>
+      </h2>
+      <div
+        class=""
+      >
+        <select
+          class="c3"
+        >
+          <option
+            value="en"
+          >
+            🇬🇧
+          </option>
+          <option
+            value="fr"
+          >
+            🇫🇷
+          </option>
+        </select>
+      </div>
+    </header>
     <div
-      class="c1"
+      class="c4"
     />
   </section>
 </div>

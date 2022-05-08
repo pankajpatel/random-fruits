@@ -1,10 +1,19 @@
-import { useQuery } from "react-query";
+import { useQuery, UseQueryResult } from "react-query";
 import { useEffect, useState } from "react";
 
 import { get } from "../api";
 import { SORT_DIRECTIONS, SORT_FUNCTIONS } from "../constants/sorting";
 
-export const usePayments = () => {
+interface UsePayments {
+  payments: PaymentInList[];
+  sortRows: (
+    sortByKey: keyof PaymentInList,
+    sortDirection: keyof typeof SORT_DIRECTIONS
+  ) => void;
+  filter: (val: string) => void;
+}
+
+export const usePayments = (): UsePayments & UseQueryResult<PaymentInList[]> => {
   const [payments, setPayments] = useState<PaymentInList[]>([]);
   const queryResult = useQuery<PaymentInList[], unknown>(
     "payments",
@@ -21,6 +30,7 @@ export const usePayments = () => {
       setPayments(data);
     }
   }, [data]);
+
   const sortRows = (
     sortByKey: keyof PaymentInList,
     sortDirection: keyof typeof SORT_DIRECTIONS
@@ -34,9 +44,21 @@ export const usePayments = () => {
     setPayments(sortedRows);
   };
 
+  const filter = (_val: string) => {
+    const val = _val.toLowerCase();
+    const filteredRows = (data || []).filter((row) => {
+      return (
+        row.customer_name.toLowerCase().includes(val) ||
+        row.merchant.name.toLowerCase().includes(val)
+      );
+    });
+    setPayments(filteredRows);
+  };
+
   return {
     ...queryResult,
     payments,
     sortRows,
+    filter,
   };
 };

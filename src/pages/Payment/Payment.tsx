@@ -1,31 +1,26 @@
-import { useEffect, useState } from "react";
-import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
-import { Badge } from "../../components/Badge";
-import { Spinner } from "../../components/Spinner";
-import { usePayment } from "../../hooks/usePayment";
+import { FormattedMessage } from "react-intl";
 
-const Code = styled.code`
-  font-weight: normal;
-  background-color: #eee;
-  border-radius: 0.25rem;
-  padding: 0.25rem;
-  font-style: italic;
+import { Code } from "@app/ds/Code";
+import { Badge } from "@app/ds/Badge";
+import { Spinner } from "@app/ds/Spinner";
+import { usePayment } from "@app/hooks/usePayment";
+import { PageHeader } from "@app/components/PageHeader/PageHeader";
+import { getBadgeColorForStatus } from "../../utils/getBadgeColorForStatus";
+
+const Container = styled.div`
+  padding: 0.5rem;
 `
 
 export const Payment = ({ id }: { id: Payment["id"] }): JSX.Element => {
-  const [payment, setPayment] = useState<Payment | undefined>();
-  const {data, isLoading, isError} = usePayment(id)
-  useEffect(() => {
-    data && setPayment(data);
-  }, [data])
+  const { payment, isLoading, isError } = usePayment(id);
+
   return (
     <section>
-      <h2>
+      <PageHeader>
         <FormattedMessage id="pages.payment.title" defaultMessage="Payment" />{" "}
         <Code>{id}</Code>
-      </h2>
-      <hr />
+      </PageHeader>
       {isLoading && <Spinner />}
       {isError && (
         <p>
@@ -33,16 +28,30 @@ export const Payment = ({ id }: { id: Payment["id"] }): JSX.Element => {
         </p>
       )}
       {!isLoading && !isError && payment && (
-        <div>
-          <p>{payment.id}</p>
-          <p>{payment.amount}</p>
-          <p>{payment.created}</p>
-          <p>{payment.customer_name}</p>
-          <Badge type="info">{payment.status}</Badge>
-        </div>
+        <Container>
+          <p>
+            <strong>Customer:</strong> {payment.customer_name}
+          </p>
+          <p>
+            <strong>Merchant:</strong> {payment.merchant.name}
+          </p>
+          <p>
+            <strong>Amount:</strong> {payment.amount}
+          </p>
+          <p>
+            <strong>Initiated On:</strong>{" "}
+            {new Date(payment.created).toLocaleString()}
+          </p>
+          <Badge type={getBadgeColorForStatus(payment.status)}>
+            <FormattedMessage
+              id={`status.${payment.status}`}
+              defaultMessage={payment.status}
+            />
+          </Badge>
+        </Container>
       )}
     </section>
   );
 };
 
-export default Payment
+export default Payment;

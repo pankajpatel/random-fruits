@@ -8,14 +8,20 @@ import {
 import { setupServer } from "msw/node";
 import { BASE_URL } from "../api";
 
-import paymentsJSON from '../fixtures/payments.json';
+import paymentsJSON from "../fixtures/payments.json";
+
+type Value = any;
+
+type Response =
+  | Record<string, Value>
+  | Array<Record<string, Value>>;
 
 type RequestMockConfig = {
   baseUrl?: string;
   url: string;
   method: RESTMethods;
   status: number;
-  response: any;
+  response: Response;
   delayInMs?: number;
 };
 

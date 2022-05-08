@@ -23,5 +23,6 @@
   "include": [
     "src",
     "./index.d.ts"
-  ]
+  ],
+  "extends": "./tsconfig.paths.json",
 }

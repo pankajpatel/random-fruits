@@ -6,8 +6,6 @@ import { createGlobalStyle } from "styled-components";
   for Comfortaa font
   with 1.250 Major Third scale */
 export const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600&display=swap');
-
   @keyframes keep-spinning {
     0%    { transform: rotate(0deg); }
     25%   { transform: rotate(90deg); }

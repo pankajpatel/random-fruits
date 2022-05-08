@@ -10,6 +10,16 @@ import { getBadgeColorForStatus } from "../../utils/getBadgeColorForStatus";
 
 const Container = styled.div`
   padding: 0.5rem;
+
+  strong {
+    display: block;
+    font-size: 1.2rem;
+    color: #aaa;
+  }
+
+  strong + span {
+    font-size: 2rem;
+  }
 `
 
 export const Payment = ({ id }: { id: Payment["id"] }): JSX.Element => {
@@ -29,19 +39,10 @@ export const Payment = ({ id }: { id: Payment["id"] }): JSX.Element => {
       )}
       {!isLoading && !isError && payment && (
         <Container>
-          <p>
-            <strong>Customer:</strong> {payment.customer_name}
-          </p>
-          <p>
-            <strong>Merchant:</strong> {payment.merchant.name}
-          </p>
-          <p>
-            <strong>Amount:</strong> {payment.amount}
-          </p>
-          <p>
-            <strong>Initiated On:</strong>{" "}
-            {new Date(payment.created).toLocaleString()}
-          </p>
+          <strong>Customer:</strong> <span>{payment.customer_name}</span>
+          <strong>Merchant:</strong> <span>{payment.merchant.name}</span>
+          <strong>Amount:</strong> <span>{payment.amount} €</span>
+          <strong>Initiated On:</strong> <span>{new Date(payment.created).toLocaleDateString()}</span>
           <Badge type={getBadgeColorForStatus(payment.status)}>
             <FormattedMessage
               id={`status.${payment.status}`}

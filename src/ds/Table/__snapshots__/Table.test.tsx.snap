@@ -3,6 +3,7 @@
 exports[`Table should render without crashing 1`] = `
 .c0 {
   border-collapse: collapse;
+  width: 100%;
 }
 
 .c2 {

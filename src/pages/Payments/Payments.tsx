@@ -20,7 +20,7 @@ const CellConfig: Array<TableCell<PaymentInList>> = [
     render: (row: PaymentInList) => row.merchant.name,
   },
   {
-    label: "Amount",
+    label: "Amount (€)",
     key: "amount",
     align: "right",
     sortable: true,

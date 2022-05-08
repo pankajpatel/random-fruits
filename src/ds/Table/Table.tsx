@@ -18,6 +18,7 @@ interface TableProps<T> {
 
 const StyledTable = styled.table`
   border-collapse: collapse;
+  width: 100%;
 `;
 
 const Row = styled.tr`
@@ -66,6 +67,7 @@ export const Table = <T extends unknown>({
             onClick={() => (sortable && onHeaderClick ? onHeaderClick : NOOP)(key)}
           >
             {label}
+            {sortable && <small>⇵</small>}
           </HeaderCell>
         ))}
       </tr>

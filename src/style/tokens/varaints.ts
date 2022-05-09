@@ -9,4 +9,4 @@ export const VARIANTS = {
   DISABLED: 'disabled',
 };
 
-export type PalletIdentifiers = 'success' | 'info' | 'warning' | 'error';
+export type PalletteIdentifiers = 'success' | 'info' | 'warning' | 'error';

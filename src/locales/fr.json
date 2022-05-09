@@ -13,9 +13,12 @@
   "label.status": "et est actuellement en statut",
   "table.header.customerName": "Client",
   "table.header.merchantName": "Marchand",
-  "table.header.amount": "Montant (€)",
+  "table.header.amount": "Montant",
   "table.header.createdOn": "Sur",
   "table.header.dueDate": "Date de traitement",
-  "table.header.fee": "Frais (€)",
-  "table.header.status": "Statut"
+  "table.header.fee": "Frais",
+  "table.header.status": "Statut",
+  "page.payments.table.no_data": "Aucun paiement pour le moment",
+  "page.payment.installments.no_data": "Pas encore de versements",
+  "page.payment.installments.label": "Acomptes liés à ce paiement"
 }

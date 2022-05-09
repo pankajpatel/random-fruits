@@ -5,7 +5,7 @@ import { get } from '../api';
 import { SORT_DIRECTIONS, SORT_FUNCTIONS } from '../constants/sorting';
 
 interface UsePayments {
-  payments: PaymentInList[];
+  payments?: PaymentInList[];
   sortRows: (
     sortByKey: keyof PaymentInList,
     sortDirection: keyof typeof SORT_DIRECTIONS
@@ -15,12 +15,13 @@ interface UsePayments {
 
 export const usePayments = (): UsePayments &
   UseQueryResult<PaymentInList[]> => {
-  const [payments, setPayments] = useState<PaymentInList[]>([]);
+  const [payments, setPayments] = useState<PaymentInList[]>();
   const queryResult = useQuery<PaymentInList[], unknown>(
     'payments',
     () => get('/payments'),
     {
       retry: false,
+      refetchOnMount: true,
     }
   );
 
@@ -39,7 +40,7 @@ export const usePayments = (): UsePayments &
     if (sortByKey === 'merchant') {
       return;
     }
-    const sortedRows = [...payments].sort(
+    const sortedRows = [...(data ?? [])].sort(
       SORT_FUNCTIONS[sortDirection]((obj) => obj[sortByKey])
     );
     setPayments(sortedRows);

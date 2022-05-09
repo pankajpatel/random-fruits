@@ -15,6 +15,7 @@ interface TableProps<T> {
   cells: TableCell<T>[];
   onRowClick?: (row: T) => void;
   onHeaderClick?: (key: keyof T) => void;
+  noResultsMessage?: ReactNode;
 }
 
 const StyledTable = styled.table`
@@ -70,25 +71,28 @@ export const Table = <T extends unknown>({
   cells,
   onRowClick = NOOP,
   onHeaderClick,
+  noResultsMessage = null,
 }: TableProps<T>): JSX.Element => (
   <StyledTable>
-    <thead>
-      <tr>
-        {cells.map(({ label, align = 'left', key, sortable }) => (
-          <HeaderCell
-            key={key as string}
-            align={align}
-            clickable={Boolean(sortable)}
-            onClick={() =>
-              (sortable && onHeaderClick ? onHeaderClick : NOOP)(key)
-            }
-          >
-            {label}
-            {sortable && <small>⇵</small>}
-          </HeaderCell>
-        ))}
-      </tr>
-    </thead>
+    {Boolean(rows.length && noResultsMessage) && (
+      <thead>
+        <tr>
+          {cells.map(({ label, align = 'left', key, sortable }) => (
+            <HeaderCell
+              key={key as string}
+              align={align}
+              clickable={Boolean(sortable)}
+              onClick={() =>
+                (sortable && onHeaderClick ? onHeaderClick : NOOP)(key)
+              }
+            >
+              {label}
+              {sortable && <small>⇵</small>}
+            </HeaderCell>
+          ))}
+        </tr>
+      </thead>
+    )}
     <tbody>
       {rows.map((row: T, index: number) => (
         <Row
@@ -124,6 +128,11 @@ export const Table = <T extends unknown>({
           )}
         </Row>
       ))}
+      {rows.length === 0 && noResultsMessage && (
+        <tr>
+          <td colSpan={cells.length}>{noResultsMessage}</td>
+        </tr>
+      )}
     </tbody>
   </StyledTable>
 );

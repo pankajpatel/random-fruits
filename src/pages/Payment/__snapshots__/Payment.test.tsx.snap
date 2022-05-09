@@ -1,16 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Payment should render without crashing 1`] = `
-.c2 {
-  background-color: #eee;
-  border-radius: 0.35em;
-  padding: 0.35rem 0.55rem;
-  font-size: 0.95em;
-  font-style: italic;
-  font-weight: 300;
-  line-height: 0.9;
-}
-
 .c4 {
   border: 2px solid transparent;
   border-left-color: #333;
@@ -55,6 +45,29 @@ exports[`Payment should render without crashing 1`] = `
 .c1 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 > * {
+  margin-right: 0.5rem;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.2);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: inline-block;
+  border-radius: 0.25rem;
 }
 
 <div>
@@ -65,13 +78,24 @@ exports[`Payment should render without crashing 1`] = `
       <h2
         class="c1"
       >
-        Payment
-         
-        <code
+        <a
           class="c2"
+          href="/payments"
         >
-          payment_i2NJhL
-        </code>
+          <svg
+            height="1rem"
+            version="1.1"
+            viewBox="0 0 50.999 85.999"
+            width="1rem"
+          >
+            <path
+              d="M44.998,80.094c1.338,1.352,1.338,3.541,0,4.893c-1.336,1.35-3.506,1.352-4.844,0L1.003,45.447  c-1.338-1.352-1.338-3.543,0-4.895l39.15-39.539c1.338-1.352,3.506-1.352,4.844,0S46.335,4.555,45,5.906L9.294,43L44.998,80.094z"
+            />
+          </svg>
+        </a>
+        <span>
+          page.payment.title
+        </span>
       </h2>
       <div
         class=""
@@ -82,19 +106,661 @@ exports[`Payment should render without crashing 1`] = `
           <option
             value="en"
           >
-            🇬🇧
+            EN 🇬🇧
           </option>
           <option
             value="fr"
           >
-            🇫🇷
+            FR 🇫🇷
           </option>
         </select>
       </div>
     </header>
     <div
       class="c4"
+      data-testid="spinner"
+      title="Loading..."
     />
+  </section>
+</div>
+`;
+
+exports[`Payment should render without crashing 2`] = `
+.c6 {
+  display: block;
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  padding: 0 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.c3 {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  width: 100%;
+}
+
+.c1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 > * {
+  margin-right: 0.5rem;
+}
+
+.c8 {
+  padding: 0.35em 0.55em;
+  border-radius: 0.4em;
+  background-color: #e3f2fd;
+  border: 1px solid rgba(0,0,0,0.05);
+  line-height: 1;
+}
+
+.c16 {
+  padding: 0.35em 0.55em;
+  border-radius: 0.4em;
+  background-color: #fafafa;
+  border: 1px solid rgba(0,0,0,0.05);
+  line-height: 1;
+}
+
+.c4 {
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.c4 .c5 + span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.c4 .c7 {
+  font-size: 1rem;
+}
+
+.c10 {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.c13 {
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.c13:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.c13:hover {
+  background-color: #eee;
+}
+
+.c14 {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+}
+
+.c15 {
+  padding: 0.75rem 0.5rem;
+  text-align: right;
+}
+
+.c11 {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+  background-color: #eee;
+  cursor: pointer;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+  text-decoration-style: dotted;
+}
+
+.c11:hover {
+  background-color: #ddd;
+}
+
+.c12 {
+  padding: 0.75rem 0.5rem;
+  text-align: right;
+  background-color: #eee;
+  cursor: pointer;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+  text-decoration-style: dotted;
+}
+
+.c12:hover {
+  background-color: #ddd;
+}
+
+.c9 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.2);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: inline-block;
+  border-radius: 0.25rem;
+}
+
+<div>
+  <section>
+    <header
+      class="c0"
+    >
+      <h2
+        class="c1"
+      >
+        <a
+          class="c2"
+          href="/payments"
+        >
+          <svg
+            height="1rem"
+            version="1.1"
+            viewBox="0 0 50.999 85.999"
+            width="1rem"
+          >
+            <path
+              d="M44.998,80.094c1.338,1.352,1.338,3.541,0,4.893c-1.336,1.35-3.506,1.352-4.844,0L1.003,45.447  c-1.338-1.352-1.338-3.543,0-4.895l39.15-39.539c1.338-1.352,3.506-1.352,4.844,0S46.335,4.555,45,5.906L9.294,43L44.998,80.094z"
+            />
+          </svg>
+        </a>
+        <span>
+          page.payment.title
+        </span>
+      </h2>
+      <div
+        class=""
+      >
+        <select
+          class="c3"
+        >
+          <option
+            value="en"
+          >
+            EN 🇬🇧
+          </option>
+          <option
+            value="fr"
+          >
+            FR 🇫🇷
+          </option>
+        </select>
+      </div>
+    </header>
+    <div
+      class="c4"
+    >
+      <div>
+        <label
+          class="c5 c6"
+        >
+          label.customer
+        </label>
+        <span>
+          Émile Zola
+        </span>
+      </div>
+      <div>
+        <label
+          class="c5 c6"
+        >
+          label.merchant
+        </label>
+        <span>
+          Super Merchant
+        </span>
+      </div>
+      <div>
+        <label
+          class="c5 c6"
+        >
+          label.amount
+        </label>
+        <span>
+          356050
+           €
+        </span>
+      </div>
+      <div>
+        <label
+          class="c5 c6"
+        >
+          label.created
+        </label>
+        <span>
+          Mon Apr 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+        </span>
+      </div>
+      <div>
+        <label
+          class="c5 c6"
+        >
+          label.status
+        </label>
+        <span>
+          <span
+            class="c7 c8"
+            type="info"
+          >
+            status.ready
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      class="c9"
+    >
+      <label
+        class="c5 c6"
+      >
+        page.payment.installments.label
+      </label>
+      <table
+        class="c10"
+      >
+        <thead>
+          <tr>
+            <th
+              class="c11"
+            >
+              table.header.dueDate
+              <small>
+                ⇵
+              </small>
+            </th>
+            <th
+              class="c12"
+            >
+              table.header.amount
+              <small>
+                ⇵
+              </small>
+            </th>
+            <th
+              class="c12"
+            >
+              table.header.fee
+              <small>
+                ⇵
+              </small>
+            </th>
+            <th
+              class="c12"
+            >
+              table.header.status
+              <small>
+                ⇵
+              </small>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="c13"
+            title="Click to open payment details"
+          >
+            <td
+              class="c14"
+            >
+              Mon Apr 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+            </td>
+            <td
+              class="c15"
+            >
+              35555
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              500
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              <span
+                class="c7 c8"
+                type="info"
+              >
+                status.ready
+              </span>
+            </td>
+          </tr>
+          <tr
+            class="c13"
+            title="Click to open payment details"
+          >
+            <td
+              class="c14"
+            >
+              Wed May 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+            </td>
+            <td
+              class="c15"
+            >
+              35555
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              0
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              <span
+                class="c7 c16"
+                type="default"
+              >
+                status.not_started
+              </span>
+            </td>
+          </tr>
+          <tr
+            class="c13"
+            title="Click to open payment details"
+          >
+            <td
+              class="c14"
+            >
+              Sat Jun 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+            </td>
+            <td
+              class="c15"
+            >
+              35555
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              0
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              <span
+                class="c7 c16"
+                type="default"
+              >
+                status.not_started
+              </span>
+            </td>
+          </tr>
+          <tr
+            class="c13"
+            title="Click to open payment details"
+          >
+            <td
+              class="c14"
+            >
+              Mon Jul 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+            </td>
+            <td
+              class="c15"
+            >
+              35555
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              0
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              <span
+                class="c7 c16"
+                type="default"
+              >
+                status.not_started
+              </span>
+            </td>
+          </tr>
+          <tr
+            class="c13"
+            title="Click to open payment details"
+          >
+            <td
+              class="c14"
+            >
+              Thu Aug 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+            </td>
+            <td
+              class="c15"
+            >
+              35555
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              0
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              <span
+                class="c7 c16"
+                type="default"
+              >
+                status.not_started
+              </span>
+            </td>
+          </tr>
+          <tr
+            class="c13"
+            title="Click to open payment details"
+          >
+            <td
+              class="c14"
+            >
+              Sun Sep 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+            </td>
+            <td
+              class="c15"
+            >
+              35555
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              0
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              <span
+                class="c7 c16"
+                type="default"
+              >
+                status.not_started
+              </span>
+            </td>
+          </tr>
+          <tr
+            class="c13"
+            title="Click to open payment details"
+          >
+            <td
+              class="c14"
+            >
+              Tue Oct 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+            </td>
+            <td
+              class="c15"
+            >
+              35555
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              0
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              <span
+                class="c7 c16"
+                type="default"
+              >
+                status.not_started
+              </span>
+            </td>
+          </tr>
+          <tr
+            class="c13"
+            title="Click to open payment details"
+          >
+            <td
+              class="c14"
+            >
+              Fri Nov 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
+            </td>
+            <td
+              class="c15"
+            >
+              35555
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              0
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              <span
+                class="c7 c16"
+                type="default"
+              >
+                status.not_started
+              </span>
+            </td>
+          </tr>
+          <tr
+            class="c13"
+            title="Click to open payment details"
+          >
+            <td
+              class="c14"
+            >
+              Sun Dec 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
+            </td>
+            <td
+              class="c15"
+            >
+              35555
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              0
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              <span
+                class="c7 c16"
+                type="default"
+              >
+                status.not_started
+              </span>
+            </td>
+          </tr>
+          <tr
+            class="c13"
+            title="Click to open payment details"
+          >
+            <td
+              class="c14"
+            >
+              Wed Jan 04 2023 00:00:00 GMT+0100 (Central European Standard Time)
+            </td>
+            <td
+              class="c15"
+            >
+              35555
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              0
+               €
+            </td>
+            <td
+              class="c15"
+            >
+              <span
+                class="c7 c16"
+                type="default"
+              >
+                status.not_started
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 </div>
 `;

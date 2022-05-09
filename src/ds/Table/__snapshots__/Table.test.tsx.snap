@@ -1,65 +1,83 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Table should render without crashing 1`] = `
+exports[`Table should not render empty row message & header when prop was not available 1`] = `
 .c0 {
   border-collapse: collapse;
   width: 100%;
-}
-
-.c2 {
-  cursor: pointer;
-  font-size: 1.1rem;
-}
-
-.c2:nth-child(even) {
-  background-color: #fafafa;
-}
-
-.c2:hover {
-  background-color: #eee;
-}
-
-.c3 {
-  padding: 0.75rem 0.5rem;
-  text-align: left;
-}
-
-.c1 {
-  padding: 0.75rem 0.5rem;
-  text-align: left;
-  background-color: #eee;
 }
 
 <div>
   <table
     class="c0"
   >
-    <thead>
+    <tbody />
+  </table>
+</div>
+`;
+
+exports[`Table should render empty row message 1`] = `
+.c0 {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+<div>
+  <table
+    class="c0"
+  >
+    <tbody>
       <tr>
-        <th
-          class="c1"
+        <td
+          colspan="2"
         >
-          Customer Name
-        </th>
-        <th
-          class="c1"
-        >
-          Created On
-        </th>
+          No Data
+        </td>
       </tr>
-    </thead>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Table should render rows for cell config 1`] = `
+.c0 {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.c1 {
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.c1:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.c1:hover {
+  background-color: #eee;
+}
+
+.c2 {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+}
+
+<div>
+  <table
+    class="c0"
+  >
     <tbody>
       <tr
-        class="c2"
+        class="c1"
         title="Click to open payment details"
       >
         <td
-          class="c3"
+          class="c2"
         >
           Émile Zola
         </td>
         <td
-          class="c3"
+          class="c2"
         >
           04/04/2022
         </td>

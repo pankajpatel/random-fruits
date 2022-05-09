@@ -1,4 +1,4 @@
-export type PalletIdentifiers =
+export type PalletteIdentifiers =
   | 'success'
   | 'info'
   | 'warning'

@@ -8,8 +8,8 @@ import { SORT_DIRECTIONS } from '@app/constants/sorting';
 import { usePayments } from '@app/hooks/usePayments';
 import { getBadgeColorForStatus } from '@app/utils/getBadgeColorForStatus';
 import { PageHeader } from '@app/components/PageHeader/PageHeader';
-import { Input } from '@app/ds/Input';
 import { Amount } from '@app/components/Amount/Amount';
+import { FilterBar } from '@app/components/FilterBar/FilterBar';
 
 const CellConfig: Array<TableCell<PaymentInList>> = [
   {
@@ -68,21 +68,16 @@ export const Payments = (): JSX.Element => {
   const { payments, isError, isLoading, sortRows, filter } = usePayments();
 
   const [, gotTo] = useLocation();
+
   return (
     <section>
       <PageHeader>
         <FormattedMessage id="page.payments.title" defaultMessage="Payments" />
       </PageHeader>
-      <div>
-        <Input
-          type="text"
-          placeholder="Filter Payments"
-          onChange={(e) => filter(e.target.value)}
-        />
-      </div>
+      <FilterBar onChange={filter} />
       {isLoading && <Spinner />}
       {isError && <div>Failed to load</div>}
-      {!isLoading && !isError && payments.length ? (
+      {!isLoading && !isError && payments ? (
         <Table
           rows={payments}
           cells={CellConfig}
@@ -90,6 +85,12 @@ export const Payments = (): JSX.Element => {
           onHeaderClick={(key: keyof PaymentInList) => {
             sortRows(key as keyof PaymentInList, SORT_DIRECTIONS.ASC);
           }}
+          noResultsMessage={
+            <FormattedMessage
+              id="page.payments.table.no_data"
+              defaultMessage="No data"
+            />
+          }
         />
       ) : null}
     </section>

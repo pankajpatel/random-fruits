@@ -16,6 +16,10 @@ const Container = styled.div`
     display: block;
     margin-bottom: 1.5rem;
   }
+
+  ${Badge} {
+    font-size: 1rem;
+  }
 `;
 
 export const PaymentDetails = ({

@@ -32,8 +32,20 @@ const mockRow = {
 };
 
 describe('Table', () => {
-  it('should render without crashing', () => {
+  it('should render rows for cell config', () => {
     const { container } = render(<Table cells={mockConfig} rows={[mockRow]} />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render empty row message', () => {
+    const { container } = render(
+      <Table cells={mockConfig} rows={[]} noResultsMessage={<>No Data</>} />
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should not render empty row message & header when prop was not available', () => {
+    const { container } = render(<Table cells={mockConfig} rows={[]} />);
     expect(container).toMatchSnapshot();
   });
 });

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Payment Details should render without crashing 1`] = `
-.c3 {
+.c4 {
   padding: 0.35em 0.55em;
   border-radius: 0.4em;
   background-color: #e3f2fd;
@@ -25,6 +25,10 @@ exports[`Payment Details should render without crashing 1`] = `
   font-size: 2rem;
   display: block;
   margin-bottom: 1.5rem;
+}
+
+.c0 .c3 {
+  font-size: 1rem;
 }
 
 <div>
@@ -80,7 +84,7 @@ exports[`Payment Details should render without crashing 1`] = `
       </label>
       <span>
         <span
-          class="c3"
+          class="c3 c4"
           type="info"
         >
           status.ready

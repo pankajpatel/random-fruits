@@ -1,4 +1,4 @@
-import { PalletIdentifiers } from '../style/tokens';
+import { PalletteIdentifiers } from '../style/tokens';
 /*
 ready
 not_started
@@ -6,7 +6,7 @@ paid
 in_progress
 default
 */
-export const getBadgeColorForStatus = (status: Status): PalletIdentifiers => {
+export const getBadgeColorForStatus = (status: Status): PalletteIdentifiers => {
   switch (status) {
     case 'pending':
       return 'warning';

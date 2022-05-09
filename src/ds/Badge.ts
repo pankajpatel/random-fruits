@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { PalletIdentifiers, Pallette } from '../style/tokens/tokens';
+import { PalletteIdentifiers, Pallette } from '../style/tokens/tokens';
 
-export type BadgeType = PalletIdentifiers;
+export type BadgeType = PalletteIdentifiers;
 
 export const Badge = styled.span<{ type: BadgeType }>`
   padding: 0.35em 0.55em;

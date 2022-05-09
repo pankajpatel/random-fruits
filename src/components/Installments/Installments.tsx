@@ -77,6 +77,12 @@ export const Installments = ({ payment }: { payment: Payment }) => {
         gotTo(`/payments/${payment.id}/installments/${row.id}`)
       }
       onHeaderClick={(key: keyof Installment) => sortInstallments(key)}
+      noResultsMessage={
+        <FormattedMessage
+          id="page.payment.installments.no_data"
+          defaultMessage="No data"
+        />
+      }
     />
   );
 };

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Payments should render when no transaction is present 1`] = `
-.c4 {
+exports[`Payments should render when transactions are present 1`] = `
+.c5 {
   border: 2px solid transparent;
   border-left-color: #333;
   border-radius: 50%;
@@ -45,9 +45,21 @@ exports[`Payments should render when no transaction is present 1`] = `
 .c1 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c3 {
+.c1 > * {
+  margin-right: 0.5rem;
+}
+
+.c4 {
   min-width: 300px;
   padding: 0.5rem;
   border: 1px solid #ccc;
@@ -58,6 +70,16 @@ exports[`Payments should render when no transaction is present 1`] = `
   margin: 0.5rem;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
 <div>
   <section>
     <header
@@ -66,7 +88,7 @@ exports[`Payments should render when no transaction is present 1`] = `
       <h2
         class="c1"
       >
-        Payments
+        page.payments.title
       </h2>
       <div
         class=""
@@ -77,41 +99,114 @@ exports[`Payments should render when no transaction is present 1`] = `
           <option
             value="en"
           >
-            🇬🇧
+            EN 🇬🇧
           </option>
           <option
             value="fr"
           >
-            🇫🇷
+            FR 🇫🇷
           </option>
         </select>
       </div>
     </header>
-    <div>
+    <div
+      class="c3"
+    >
       <input
-        class="c3"
+        class="c4"
         placeholder="Filter Payments"
         type="text"
       />
     </div>
     <div
-      class="c4"
+      class="c5"
+      data-testid="spinner"
+      title="Loading..."
     />
   </section>
 </div>
 `;
 
-exports[`Payments should render when transactions are present 1`] = `
-.c4 {
-  border: 2px solid transparent;
-  border-left-color: #333;
-  border-radius: 50%;
-  width: 1.2rem;
-  height: 1.2rem;
-  display: block;
-  margin: 0.25rem;
-  -webkit-animation: keep-spinning 500ms infinite;
-  animation: keep-spinning 500ms infinite;
+exports[`Payments should render when transactions are present 2`] = `
+.c11 {
+  padding: 0.35em 0.55em;
+  border-radius: 0.4em;
+  background-color: #fafafa;
+  border: 1px solid rgba(0,0,0,0.05);
+  line-height: 1;
+}
+
+.c12 {
+  padding: 0.35em 0.55em;
+  border-radius: 0.4em;
+  background-color: #e3f2fd;
+  border: 1px solid rgba(0,0,0,0.05);
+  line-height: 1;
+}
+
+.c13 {
+  padding: 0.35em 0.55em;
+  border-radius: 0.4em;
+  background-color: #e6fffa;
+  border: 1px solid rgba(0,0,0,0.05);
+  line-height: 1;
+}
+
+.c14 {
+  padding: 0.35em 0.55em;
+  border-radius: 0.4em;
+  background-color: #fce4ec;
+  border: 1px solid rgba(0,0,0,0.05);
+  line-height: 1;
+}
+
+.c5 {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.c8 {
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.c8:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.c8:hover {
+  background-color: #eee;
+}
+
+.c9 {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+}
+
+.c10 {
+  padding: 0.75rem 0.5rem;
+  text-align: right;
+}
+
+.c6 {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+  background-color: #eee;
+}
+
+.c7 {
+  padding: 0.75rem 0.5rem;
+  text-align: right;
+  background-color: #eee;
+  cursor: pointer;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+  text-decoration-style: dotted;
+}
+
+.c7:hover {
+  background-color: #ddd;
 }
 
 .c0 {
@@ -146,9 +241,21 @@ exports[`Payments should render when transactions are present 1`] = `
 .c1 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c3 {
+.c1 > * {
+  margin-right: 0.5rem;
+}
+
+.c4 {
   min-width: 300px;
   padding: 0.5rem;
   border: 1px solid #ccc;
@@ -159,6 +266,16 @@ exports[`Payments should render when transactions are present 1`] = `
   margin: 0.5rem;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
 <div>
   <section>
     <header
@@ -167,7 +284,7 @@ exports[`Payments should render when transactions are present 1`] = `
       <h2
         class="c1"
       >
-        Payments
+        page.payments.title
       </h2>
       <div
         class=""
@@ -178,26 +295,498 @@ exports[`Payments should render when transactions are present 1`] = `
           <option
             value="en"
           >
-            🇬🇧
+            EN 🇬🇧
           </option>
           <option
             value="fr"
           >
-            🇫🇷
+            FR 🇫🇷
           </option>
         </select>
       </div>
     </header>
-    <div>
+    <div
+      class="c3"
+    >
       <input
-        class="c3"
+        class="c4"
         placeholder="Filter Payments"
         type="text"
       />
     </div>
-    <div
-      class="c4"
-    />
+    <table
+      class="c5"
+    >
+      <thead>
+        <tr>
+          <th
+            class="c6"
+          >
+            table.header.customer
+          </th>
+          <th
+            class="c6"
+          >
+            table.header.merchant
+          </th>
+          <th
+            class="c7"
+          >
+            table.header.amount
+            <small>
+              ⇵
+            </small>
+          </th>
+          <th
+            class="c6"
+          >
+            table.header.created
+          </th>
+          <th
+            class="c7"
+          >
+            table.header.status
+            <small>
+              ⇵
+            </small>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Victor Hugo
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            45900
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Fri Apr 01 2022 00:00:00 GMT+0200 (Central European Summer Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c11"
+              type="default"
+            >
+              status.not_started
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Émile Zola
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            356050
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Mon Apr 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c12"
+              type="info"
+            >
+              status.ready
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Albert Camus
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            155800
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Mon Apr 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c12"
+              type="info"
+            >
+              status.ready
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Charles Baudelaire
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            87600
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Sat Jun 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c12"
+              type="info"
+            >
+              status.in_progress
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Gustave Flaubert
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            54600
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Wed May 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c12"
+              type="info"
+            >
+              status.ready
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Jean de La Fontaine
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            7860
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Wed May 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c13"
+              type="success"
+            >
+              status.paid
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Marcel Proust
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            80000
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Mon Jul 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c13"
+              type="success"
+            >
+              status.paid
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Georges Sand
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            30250
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Tue Jan 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c12"
+              type="info"
+            >
+              status.in_progress
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Guy de Maupassant
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            35200
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Fri Feb 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c13"
+              type="success"
+            >
+              status.paid
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Nicolas Boileau
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            66600
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Fri Mar 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c14"
+              type="error"
+            >
+              status.default
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Alfred de Musset
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            100340
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Wed May 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c14"
+              type="error"
+            >
+              status.default
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Marguerite Duras
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            176490
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Sat Jun 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c13"
+              type="success"
+            >
+              status.paid
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 </div>
 `;

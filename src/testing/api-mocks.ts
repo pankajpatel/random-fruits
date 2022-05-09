@@ -6,25 +6,24 @@ import {
   RestRequest,
 } from 'msw';
 import { setupServer } from 'msw/node';
-import { BASE_URL } from '../api';
+import { BASE_URL } from '@app/api';
 
-import paymentsJSON from '../fixtures/payments.json';
+import paymentsJSON from '@app/fixtures/payments.json';
 
-type Value = any;
+type Value = unknown;
 
 type Response = Record<string, Value> | Array<Record<string, Value>>;
 
 type RequestMockConfig = {
   baseUrl?: string;
   url: string;
-  method: RESTMethods;
-  status: number;
   response: Response;
+  method?: RESTMethods;
+  status?: number;
   delayInMs?: number;
 };
 
-const server = setupServer();
-
+/* Could be better than 1:1 mapping; would improve if I have time */
 const getMethod = (method: RESTMethods) => {
   switch (method) {
     case RESTMethods.GET:
@@ -46,32 +45,36 @@ const getMethod = (method: RESTMethods) => {
   }
 };
 
+export const server = setupServer(
+  rest.get('/', (req: RestRequest, res: ResponseFunction, ctx: RestContext) => {
+    return res(ctx.delay(0), ctx.status(200), ctx.json({}));
+  })
+);
+
 export { RESTMethods as MockableHTTPMethods };
 
-export const mockEndpoint = (config: RequestMockConfig) => {
-  server.use(
-    getMethod(config.method)(
-      `${config.baseUrl ?? BASE_URL}${config.url}`,
-      (req: RestRequest, res: ResponseFunction, ctx: RestContext) => {
-        return res(ctx.status(config.status), ctx.json(config.response));
-      }
-    )
+export const mockEndpoint = ({
+  url,
+  response = {},
+  baseUrl = BASE_URL,
+  method = RESTMethods.GET,
+  status = 200,
+  delayInMs = 0,
+}: RequestMockConfig) => {
+  const handler = getMethod(method)(
+    `${baseUrl}${url}`,
+    (req: RestRequest, res: ResponseFunction, ctx: RestContext) => {
+      return res(ctx.delay(delayInMs), ctx.status(status), ctx.json(response));
+    }
   );
+  server.use(handler);
+};
+
+export const resetAPIMocks = () => {
+  server.resetHandlers();
 };
 
 mockEndpoint({
-  method: RESTMethods.GET,
   url: '/payments',
-  status: 200,
   response: paymentsJSON,
-  delayInMs: 200,
 });
-
-// Enable API mocking before tests.
-beforeAll(() => server.listen());
-
-// Reset any runtime request handlers we may add during the tests.
-afterEach(() => server.resetHandlers());
-
-// Disable API mocking after the tests are done.
-afterAll(() => server.close());

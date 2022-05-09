@@ -7,6 +7,11 @@ import styled from 'styled-components';
 const H2 = styled.h2`
   margin-top: 1rem;
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  & > * {
+    margin-right: 0.5rem;
+  }
 `;
 
 export const PageHeader = ({
@@ -21,13 +26,11 @@ export const PageHeader = ({
       <Select
         value={locale}
         onChange={(e: ChangeEvent<HTMLSelectElement>) => {
-          console.log(e.target.value, locale);
-
           setLocale(e.target.value as Locale);
         }}
       >
-        <option value="en">🇬🇧</option>
-        <option value="fr">🇫🇷</option>
+        <option value="en">EN 🇬🇧</option>
+        <option value="fr">FR 🇫🇷</option>
       </Select>
     </Header>
   );

@@ -13,9 +13,12 @@
   "label.status": "and is currently in Status",
   "table.header.customerName": "Customer",
   "table.header.merchantName": "Merchant",
-  "table.header.amount": "Amount (€)",
+  "table.header.amount": "Amount",
   "table.header.createdOn": "On",
   "table.header.dueDate": "Processing Date",
-  "table.header.fee": "Fee (€)",
-  "table.header.status": "Status"
+  "table.header.fee": "Fee",
+  "table.header.status": "Status",
+  "page.payments.table.no_data": "No payments yet",
+  "page.payment.installments.no_data": "No installments yet",
+  "page.payment.installments.label": "Installments related to this payment"
 }

@@ -2,11 +2,13 @@
 
 exports[`Payment should render without crashing 1`] = `
 .c2 {
-  font-weight: normal;
   background-color: #eee;
-  border-radius: 0.25rem;
-  padding: 0.25rem;
+  border-radius: 0.35em;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.95em;
   font-style: italic;
+  font-weight: 300;
+  line-height: 0.9;
 }
 
 .c4 {
@@ -39,6 +41,7 @@ exports[`Payment should render without crashing 1`] = `
   justify-content: space-between;
   border-bottom: 1px solid rgba(0,0,0,0.2);
   padding: 0 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .c3 {

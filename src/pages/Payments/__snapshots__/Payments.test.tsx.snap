@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Payments should render when no transaction is present 1`] = `
-.c3 {
+.c4 {
   border: 2px solid transparent;
   border-left-color: #333;
   border-radius: 50%;
@@ -31,6 +31,7 @@ exports[`Payments should render when no transaction is present 1`] = `
   justify-content: space-between;
   border-bottom: 1px solid rgba(0,0,0,0.2);
   padding: 0 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .c2 {
@@ -44,6 +45,17 @@ exports[`Payments should render when no transaction is present 1`] = `
 .c1 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.c3 {
+  min-width: 300px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.35em;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0.5rem;
 }
 
 <div>
@@ -77,19 +89,20 @@ exports[`Payments should render when no transaction is present 1`] = `
     </header>
     <div>
       <input
+        class="c3"
         placeholder="Filter Payments"
         type="text"
       />
     </div>
     <div
-      class="c3"
+      class="c4"
     />
   </section>
 </div>
 `;
 
 exports[`Payments should render when transactions are present 1`] = `
-.c3 {
+.c4 {
   border: 2px solid transparent;
   border-left-color: #333;
   border-radius: 50%;
@@ -119,6 +132,7 @@ exports[`Payments should render when transactions are present 1`] = `
   justify-content: space-between;
   border-bottom: 1px solid rgba(0,0,0,0.2);
   padding: 0 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .c2 {
@@ -132,6 +146,17 @@ exports[`Payments should render when transactions are present 1`] = `
 .c1 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.c3 {
+  min-width: 300px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.35em;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0.5rem;
 }
 
 <div>
@@ -165,12 +190,13 @@ exports[`Payments should render when transactions are present 1`] = `
     </header>
     <div>
       <input
+        class="c3"
         placeholder="Filter Payments"
         type="text"
       />
     </div>
     <div
-      class="c3"
+      class="c4"
     />
   </section>
 </div>

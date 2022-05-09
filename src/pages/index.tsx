@@ -1,14 +1,15 @@
 import { Suspense } from 'react';
-import { Redirect, Route, Router } from 'wouter';
+import { Redirect, Route, Switch } from 'wouter';
 
 import { Spinner } from '@app/ds/Spinner';
 import { Payment } from '@app/pages/Payment/Payment';
 import { Payments } from '@app/pages/Payments/Payments';
+import { Page404 } from './404';
 
 const Index = () => <Redirect to="/payments" />;
 
 export const RoutedApp = () => (
-  <Router>
+  <Switch>
     <Route path="/payments/:id">
       {(params) => (
         <Suspense fallback={<Spinner />}>
@@ -24,5 +25,8 @@ export const RoutedApp = () => (
     <Route path="/">
       <Index />
     </Route>
-  </Router>
+    <Route path="/:rest*">
+      <Page404 />
+    </Route>
+  </Switch>
 );

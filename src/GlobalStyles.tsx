@@ -27,6 +27,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body * {
     box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
   }
 
   p {

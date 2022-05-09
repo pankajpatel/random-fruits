@@ -1,4 +1,4 @@
-import { FormattedDate, FormattedMessage, FormattedNumber } from 'react-intl';
+import { FormattedDate, FormattedMessage } from 'react-intl';
 import { useLocation } from 'wouter';
 
 import { Badge } from '@app/ds/Badge';
@@ -8,6 +8,8 @@ import { SORT_DIRECTIONS } from '@app/constants/sorting';
 import { usePayments } from '@app/hooks/usePayments';
 import { getBadgeColorForStatus } from '@app/utils/getBadgeColorForStatus';
 import { PageHeader } from '@app/components/PageHeader/PageHeader';
+import { Input } from '@app/ds/Input';
+import { Amount } from '@app/components/Amount/Amount';
 
 const CellConfig: Array<TableCell<PaymentInList>> = [
   {
@@ -35,9 +37,7 @@ const CellConfig: Array<TableCell<PaymentInList>> = [
     key: 'amount',
     align: 'right',
     sortable: true,
-    render: (row: PaymentInList) => (
-      <FormattedNumber value={row.amount} minimumFractionDigits={2} />
-    ),
+    render: (row: PaymentInList) => <Amount value={row.amount} />,
   },
   {
     label: <FormattedMessage id="table.header.created" defaultMessage="On" />,
@@ -60,6 +60,7 @@ const CellConfig: Array<TableCell<PaymentInList>> = [
       </Badge>
     ),
     sortable: true,
+    align: 'right',
   },
 ];
 
@@ -73,7 +74,7 @@ export const Payments = (): JSX.Element => {
         <FormattedMessage id="page.payments.title" defaultMessage="Payments" />
       </PageHeader>
       <div>
-        <input
+        <Input
           type="text"
           placeholder="Filter Payments"
           onChange={(e) => filter(e.target.value)}

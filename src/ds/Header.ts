@@ -7,4 +7,5 @@ export const Header = styled.header`
   justify-content: space-between;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0 0.5rem;
+  margin-bottom: 1.5rem;
 `;

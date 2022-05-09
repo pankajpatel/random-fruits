@@ -15,5 +15,7 @@
   "table.header.merchantName": "Merchant",
   "table.header.amount": "Amount (€)",
   "table.header.createdOn": "On",
+  "table.header.dueDate": "Processing Date",
+  "table.header.fee": "Fee (€)",
   "table.header.status": "Status"
 }

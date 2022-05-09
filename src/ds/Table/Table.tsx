@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export interface TableCell<T extends unknown> {
   label: ReactNode;
@@ -35,19 +35,31 @@ const Row = styled.tr`
   }
 `;
 
-const Cell = styled.td<{ align: 'left' | 'right' }>`
+interface AlignmentProps {
+  align: 'left' | 'right';
+}
+
+const defaultCellCss = css<AlignmentProps>`
   padding: 0.75rem 0.5rem;
   text-align: ${(props) => props.align ?? 'left'};
 `;
 
-const HeaderCell = styled.th<{ align: 'left' | 'right'; clickable: boolean }>`
-  padding: 0.75rem 0.5rem;
-  text-align: ${(props) => props.align ?? 'left'};
+const Cell = styled.td<AlignmentProps & { maxWidth?: string }>`
+  ${defaultCellCss}
+`;
+
+const HeaderCell = styled.th<AlignmentProps & { clickable: boolean }>`
+  ${defaultCellCss}
+  background-color: #eee;
   ${(props) =>
     props.clickable &&
     `
     cursor: pointer;
-    &:hover { background-color: #eee; }
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    &:hover {
+      background-color: #ddd;
+    }
   `};
 `;
 
@@ -82,7 +94,7 @@ export const Table = <T extends unknown>({
         <Row
           key={index}
           onClick={() => onRowClick(row)}
-          title="Click open Payment Details"
+          title="Click to open payment details"
         >
           {cells.map(
             ({
@@ -90,27 +102,24 @@ export const Table = <T extends unknown>({
               key,
               render,
               align = 'left',
+              maxWidth,
             }: TableCell<T>): ReactNode => {
               const cellKey = key as string;
               if (typeof render === 'function') {
                 return (
-                  <Cell align={align} key={cellKey}>
+                  <Cell align={align} key={cellKey} maxWidth={maxWidth}>
                     {render(row)}
                   </Cell>
                 );
               }
               if (key) {
                 return (
-                  <Cell align={align} key={cellKey}>
+                  <Cell align={align} key={cellKey} maxWidth={maxWidth}>
                     <>{row[key]}</>
                   </Cell>
                 );
               }
-              return (
-                <Cell align={align} key={cellKey}>
-                  ' '
-                </Cell>
-              );
+              return <Cell align={align} key={cellKey} />;
             }
           )}
         </Row>

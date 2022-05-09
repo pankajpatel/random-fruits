@@ -5,7 +5,7 @@ export type PalletIdentifiers =
   | 'error'
   | 'default';
 
-export const Palette = {
+export const Pallette = {
   success: {
     light: '#e6fffa',
     main: '#b2ebf2',

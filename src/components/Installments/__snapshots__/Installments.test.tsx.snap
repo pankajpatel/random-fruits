@@ -1,0 +1,442 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Installments should render without crashing 1`] = `
+.c6 {
+  padding: 0.35em 0.55em;
+  border-radius: 0.4em;
+  background-color: #e3f2fd;
+  border: 1px solid rgba(0,0,0,0.05);
+  line-height: 1;
+}
+
+.c7 {
+  padding: 0.35em 0.55em;
+  border-radius: 0.4em;
+  background-color: #fafafa;
+  border: 1px solid rgba(0,0,0,0.05);
+  line-height: 1;
+}
+
+.c0 {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.c3 {
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.c3:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.c3:hover {
+  background-color: #eee;
+}
+
+.c4 {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+}
+
+.c5 {
+  padding: 0.75rem 0.5rem;
+  text-align: right;
+}
+
+.c1 {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+  background-color: #eee;
+  cursor: pointer;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+  text-decoration-style: dotted;
+}
+
+.c1:hover {
+  background-color: #ddd;
+}
+
+.c2 {
+  padding: 0.75rem 0.5rem;
+  text-align: right;
+  background-color: #eee;
+  cursor: pointer;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+  text-decoration-style: dotted;
+}
+
+.c2:hover {
+  background-color: #ddd;
+}
+
+<div>
+  <table
+    class="c0"
+  >
+    <thead>
+      <tr>
+        <th
+          class="c1"
+        >
+          table.header.dueDate
+          <small>
+            ⇵
+          </small>
+        </th>
+        <th
+          class="c2"
+        >
+          table.header.amount
+          <small>
+            ⇵
+          </small>
+        </th>
+        <th
+          class="c2"
+        >
+          table.header.fee
+          <small>
+            ⇵
+          </small>
+        </th>
+        <th
+          class="c2"
+        >
+          table.header.status
+          <small>
+            ⇵
+          </small>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="c3"
+        title="Click to open payment details"
+      >
+        <td
+          class="c4"
+        >
+          Mon Apr 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+        </td>
+        <td
+          class="c5"
+        >
+          35555
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          500
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          <span
+            class="c6"
+            type="info"
+          >
+            status.ready
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3"
+        title="Click to open payment details"
+      >
+        <td
+          class="c4"
+        >
+          Wed May 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+        </td>
+        <td
+          class="c5"
+        >
+          35555
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          0
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          <span
+            class="c7"
+            type="default"
+          >
+            status.not_started
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3"
+        title="Click to open payment details"
+      >
+        <td
+          class="c4"
+        >
+          Sat Jun 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+        </td>
+        <td
+          class="c5"
+        >
+          35555
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          0
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          <span
+            class="c7"
+            type="default"
+          >
+            status.not_started
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3"
+        title="Click to open payment details"
+      >
+        <td
+          class="c4"
+        >
+          Mon Jul 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+        </td>
+        <td
+          class="c5"
+        >
+          35555
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          0
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          <span
+            class="c7"
+            type="default"
+          >
+            status.not_started
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3"
+        title="Click to open payment details"
+      >
+        <td
+          class="c4"
+        >
+          Thu Aug 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+        </td>
+        <td
+          class="c5"
+        >
+          35555
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          0
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          <span
+            class="c7"
+            type="default"
+          >
+            status.not_started
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3"
+        title="Click to open payment details"
+      >
+        <td
+          class="c4"
+        >
+          Sun Sep 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+        </td>
+        <td
+          class="c5"
+        >
+          35555
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          0
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          <span
+            class="c7"
+            type="default"
+          >
+            status.not_started
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3"
+        title="Click to open payment details"
+      >
+        <td
+          class="c4"
+        >
+          Tue Oct 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+        </td>
+        <td
+          class="c5"
+        >
+          35555
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          0
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          <span
+            class="c7"
+            type="default"
+          >
+            status.not_started
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3"
+        title="Click to open payment details"
+      >
+        <td
+          class="c4"
+        >
+          Fri Nov 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
+        </td>
+        <td
+          class="c5"
+        >
+          35555
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          0
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          <span
+            class="c7"
+            type="default"
+          >
+            status.not_started
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3"
+        title="Click to open payment details"
+      >
+        <td
+          class="c4"
+        >
+          Sun Dec 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
+        </td>
+        <td
+          class="c5"
+        >
+          35555
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          0
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          <span
+            class="c7"
+            type="default"
+          >
+            status.not_started
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3"
+        title="Click to open payment details"
+      >
+        <td
+          class="c4"
+        >
+          Wed Jan 04 2023 00:00:00 GMT+0100 (Central European Standard Time)
+        </td>
+        <td
+          class="c5"
+        >
+          35555
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          0
+           €
+        </td>
+        <td
+          class="c5"
+        >
+          <span
+            class="c7"
+            type="default"
+          >
+            status.not_started
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

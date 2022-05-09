@@ -27,6 +27,7 @@ exports[`Table should render without crashing 1`] = `
 .c1 {
   padding: 0.75rem 0.5rem;
   text-align: left;
+  background-color: #eee;
 }
 
 <div>
@@ -50,7 +51,7 @@ exports[`Table should render without crashing 1`] = `
     <tbody>
       <tr
         class="c2"
-        title="Click open Payment Details"
+        title="Click to open payment details"
       >
         <td
           class="c3"

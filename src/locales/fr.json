@@ -15,5 +15,7 @@
   "table.header.merchantName": "Marchand",
   "table.header.amount": "Montant (€)",
   "table.header.createdOn": "Sur",
+  "table.header.dueDate": "Date de traitement",
+  "table.header.fee": "Frais (€)",
   "table.header.status": "Statut"
 }

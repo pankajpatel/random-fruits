@@ -1,5 +1,5 @@
 import { useQuery, UseQueryResult } from 'react-query';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { get } from '../api';
 import { SORT_DIRECTIONS, SORT_FUNCTIONS } from '../constants/sorting';
@@ -27,24 +27,27 @@ export const usePayments = (): UsePayments &
 
   const { data } = queryResult;
 
+  const sortRows = useCallback(
+    (
+      sortByKey: keyof PaymentInList,
+      sortDirection: keyof typeof SORT_DIRECTIONS
+    ) => {
+      if (sortByKey === 'merchant') {
+        return;
+      }
+      const sortedRows = [...(data ?? [])].sort(
+        SORT_FUNCTIONS[sortDirection]((obj) => obj[sortByKey])
+      );
+      setPayments(sortedRows);
+    },
+    [data]
+  );
+
   useEffect(() => {
     if (data) {
-      setPayments(data);
+      sortRows('status', SORT_DIRECTIONS.ASC);
     }
-  }, [data]);
-
-  const sortRows = (
-    sortByKey: keyof PaymentInList,
-    sortDirection: keyof typeof SORT_DIRECTIONS
-  ) => {
-    if (sortByKey === 'merchant') {
-      return;
-    }
-    const sortedRows = [...(data ?? [])].sort(
-      SORT_FUNCTIONS[sortDirection]((obj) => obj[sortByKey])
-    );
-    setPayments(sortedRows);
-  };
+  }, [data, sortRows]);
 
   const filter = (_val: string) => {
     const val = _val.toLowerCase();

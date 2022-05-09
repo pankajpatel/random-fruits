@@ -131,7 +131,7 @@ exports[`Payments should render when transactions are present 2`] = `
 .c11 {
   padding: 0.35em 0.55em;
   border-radius: 0.4em;
-  background-color: #fafafa;
+  background-color: #fce4ec;
   border: 1px solid rgba(0,0,0,0.05);
   line-height: 1;
 }
@@ -147,7 +147,7 @@ exports[`Payments should render when transactions are present 2`] = `
 .c13 {
   padding: 0.35em 0.55em;
   border-radius: 0.4em;
-  background-color: #e6fffa;
+  background-color: #fafafa;
   border: 1px solid rgba(0,0,0,0.05);
   line-height: 1;
 }
@@ -155,7 +155,7 @@ exports[`Payments should render when transactions are present 2`] = `
 .c14 {
   padding: 0.35em 0.55em;
   border-radius: 0.4em;
-  background-color: #fce4ec;
+  background-color: #e6fffa;
   border: 1px solid rgba(0,0,0,0.05);
   line-height: 1;
 }
@@ -360,6 +360,150 @@ exports[`Payments should render when transactions are present 2`] = `
           <td
             class="c9"
           >
+            Alfred de Musset
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            100340
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Wed May 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c11"
+              type="error"
+            >
+              status.default
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Nicolas Boileau
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            66600
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Fri Mar 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c11"
+              type="error"
+            >
+              status.default
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Georges Sand
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            30250
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Tue Jan 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c12"
+              type="info"
+            >
+              status.in_progress
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Charles Baudelaire
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            87600
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Sat Jun 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c12"
+              type="info"
+            >
+              status.in_progress
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
             Victor Hugo
           </td>
           <td
@@ -382,7 +526,7 @@ exports[`Payments should render when transactions are present 2`] = `
             class="c10"
           >
             <span
-              class="c11"
+              class="c13"
               type="default"
             >
               status.not_started
@@ -396,7 +540,7 @@ exports[`Payments should render when transactions are present 2`] = `
           <td
             class="c9"
           >
-            Émile Zola
+            Marguerite Duras
           </td>
           <td
             class="c9"
@@ -406,13 +550,157 @@ exports[`Payments should render when transactions are present 2`] = `
           <td
             class="c10"
           >
-            356050
+            176490
              €
           </td>
           <td
             class="c9"
           >
-            Mon Apr 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+            Sat Jun 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c14"
+              type="success"
+            >
+              status.paid
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Guy de Maupassant
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            35200
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Fri Feb 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c14"
+              type="success"
+            >
+              status.paid
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Marcel Proust
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            80000
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Mon Jul 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c14"
+              type="success"
+            >
+              status.paid
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Jean de La Fontaine
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            7860
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Wed May 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+          </td>
+          <td
+            class="c10"
+          >
+            <span
+              class="c14"
+              type="success"
+            >
+              status.paid
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="c8"
+          title="Click to open payment details"
+        >
+          <td
+            class="c9"
+          >
+            Gustave Flaubert
+          </td>
+          <td
+            class="c9"
+          >
+            Super Merchant
+          </td>
+          <td
+            class="c10"
+          >
+            54600
+             €
+          </td>
+          <td
+            class="c9"
+          >
+            Wed May 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
           </td>
           <td
             class="c10"
@@ -468,7 +756,7 @@ exports[`Payments should render when transactions are present 2`] = `
           <td
             class="c9"
           >
-            Charles Baudelaire
+            Émile Zola
           </td>
           <td
             class="c9"
@@ -478,49 +766,13 @@ exports[`Payments should render when transactions are present 2`] = `
           <td
             class="c10"
           >
-            87600
+            356050
              €
           </td>
           <td
             class="c9"
           >
-            Sat Jun 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
-          </td>
-          <td
-            class="c10"
-          >
-            <span
-              class="c12"
-              type="info"
-            >
-              status.in_progress
-            </span>
-          </td>
-        </tr>
-        <tr
-          class="c8"
-          title="Click to open payment details"
-        >
-          <td
-            class="c9"
-          >
-            Gustave Flaubert
-          </td>
-          <td
-            class="c9"
-          >
-            Super Merchant
-          </td>
-          <td
-            class="c10"
-          >
-            54600
-             €
-          </td>
-          <td
-            class="c9"
-          >
-            Wed May 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
+            Mon Apr 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
           </td>
           <td
             class="c10"
@@ -530,258 +782,6 @@ exports[`Payments should render when transactions are present 2`] = `
               type="info"
             >
               status.ready
-            </span>
-          </td>
-        </tr>
-        <tr
-          class="c8"
-          title="Click to open payment details"
-        >
-          <td
-            class="c9"
-          >
-            Jean de La Fontaine
-          </td>
-          <td
-            class="c9"
-          >
-            Super Merchant
-          </td>
-          <td
-            class="c10"
-          >
-            7860
-             €
-          </td>
-          <td
-            class="c9"
-          >
-            Wed May 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
-          </td>
-          <td
-            class="c10"
-          >
-            <span
-              class="c13"
-              type="success"
-            >
-              status.paid
-            </span>
-          </td>
-        </tr>
-        <tr
-          class="c8"
-          title="Click to open payment details"
-        >
-          <td
-            class="c9"
-          >
-            Marcel Proust
-          </td>
-          <td
-            class="c9"
-          >
-            Super Merchant
-          </td>
-          <td
-            class="c10"
-          >
-            80000
-             €
-          </td>
-          <td
-            class="c9"
-          >
-            Mon Jul 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
-          </td>
-          <td
-            class="c10"
-          >
-            <span
-              class="c13"
-              type="success"
-            >
-              status.paid
-            </span>
-          </td>
-        </tr>
-        <tr
-          class="c8"
-          title="Click to open payment details"
-        >
-          <td
-            class="c9"
-          >
-            Georges Sand
-          </td>
-          <td
-            class="c9"
-          >
-            Super Merchant
-          </td>
-          <td
-            class="c10"
-          >
-            30250
-             €
-          </td>
-          <td
-            class="c9"
-          >
-            Tue Jan 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
-          </td>
-          <td
-            class="c10"
-          >
-            <span
-              class="c12"
-              type="info"
-            >
-              status.in_progress
-            </span>
-          </td>
-        </tr>
-        <tr
-          class="c8"
-          title="Click to open payment details"
-        >
-          <td
-            class="c9"
-          >
-            Guy de Maupassant
-          </td>
-          <td
-            class="c9"
-          >
-            Super Merchant
-          </td>
-          <td
-            class="c10"
-          >
-            35200
-             €
-          </td>
-          <td
-            class="c9"
-          >
-            Fri Feb 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
-          </td>
-          <td
-            class="c10"
-          >
-            <span
-              class="c13"
-              type="success"
-            >
-              status.paid
-            </span>
-          </td>
-        </tr>
-        <tr
-          class="c8"
-          title="Click to open payment details"
-        >
-          <td
-            class="c9"
-          >
-            Nicolas Boileau
-          </td>
-          <td
-            class="c9"
-          >
-            Super Merchant
-          </td>
-          <td
-            class="c10"
-          >
-            66600
-             €
-          </td>
-          <td
-            class="c9"
-          >
-            Fri Mar 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
-          </td>
-          <td
-            class="c10"
-          >
-            <span
-              class="c14"
-              type="error"
-            >
-              status.default
-            </span>
-          </td>
-        </tr>
-        <tr
-          class="c8"
-          title="Click to open payment details"
-        >
-          <td
-            class="c9"
-          >
-            Alfred de Musset
-          </td>
-          <td
-            class="c9"
-          >
-            Super Merchant
-          </td>
-          <td
-            class="c10"
-          >
-            100340
-             €
-          </td>
-          <td
-            class="c9"
-          >
-            Wed May 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
-          </td>
-          <td
-            class="c10"
-          >
-            <span
-              class="c14"
-              type="error"
-            >
-              status.default
-            </span>
-          </td>
-        </tr>
-        <tr
-          class="c8"
-          title="Click to open payment details"
-        >
-          <td
-            class="c9"
-          >
-            Marguerite Duras
-          </td>
-          <td
-            class="c9"
-          >
-            Super Merchant
-          </td>
-          <td
-            class="c10"
-          >
-            176490
-             €
-          </td>
-          <td
-            class="c9"
-          >
-            Sat Jun 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
-          </td>
-          <td
-            class="c10"
-          >
-            <span
-              class="c13"
-              type="success"
-            >
-              status.paid
             </span>
           </td>
         </tr>

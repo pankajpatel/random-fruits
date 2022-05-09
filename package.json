@@ -28,13 +28,27 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "craco eject"
+    "eject": "craco eject",
+    "prepare": "husky install",
+    "format": "prettier --write '**/*.{ts,tsx,js,json,md}'"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error"
+      ]
+    }
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "browserslist": {
     "production": [
@@ -51,7 +65,12 @@
   "devDependencies": {
     "@types/react-helmet": "^6.1.5",
     "@types/styled-components": "^5.1.25",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.0",
     "jest-styled-components": "^7.0.8",
-    "msw": "^0.39.2"
+    "lint-staged": "^12.4.1",
+    "msw": "^0.39.2",
+    "prettier": "2.6.2"
   }
 }

@@ -1,6 +1,6 @@
-import { Router } from "wouter";
-import { IntlProvider } from "react-intl";
-import { QueryClient, QueryClientProvider } from "react-query";
+import { Router } from 'wouter';
+import { IntlProvider } from 'react-intl';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const queryClient = new QueryClient();
 

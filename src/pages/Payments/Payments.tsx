@@ -1,38 +1,56 @@
-import { FormattedMessage } from "react-intl";
-import { useLocation } from "wouter";
+import { FormattedDate, FormattedMessage, FormattedNumber } from 'react-intl';
+import { useLocation } from 'wouter';
 
-import { Badge } from "@app/ds/Badge";
-import { Spinner } from "@app/ds/Spinner";
-import { Table, TableCell } from "@app/ds/Table/Table";
-import { SORT_DIRECTIONS } from "@app/constants/sorting";
-import { usePayments } from "@app/hooks/usePayments";
-import { getBadgeColorForStatus } from "@app/utils/getBadgeColorForStatus";
-import { PageHeader } from "@app/components/PageHeader/PageHeader";
+import { Badge } from '@app/ds/Badge';
+import { Spinner } from '@app/ds/Spinner';
+import { Table, TableCell } from '@app/ds/Table/Table';
+import { SORT_DIRECTIONS } from '@app/constants/sorting';
+import { usePayments } from '@app/hooks/usePayments';
+import { getBadgeColorForStatus } from '@app/utils/getBadgeColorForStatus';
+import { PageHeader } from '@app/components/PageHeader/PageHeader';
 
 const CellConfig: Array<TableCell<PaymentInList>> = [
   {
-    label: "Customer Name",
-    key: "customer_name",
+    label: (
+      <FormattedMessage
+        id="table.header.customer"
+        defaultMessage="Customer Name"
+      />
+    ),
+    key: 'customer_name',
+    maxWidth: '30%',
   },
   {
-    label: "Merchant",
-    key: "merchant",
+    label: (
+      <FormattedMessage id="table.header.merchant" defaultMessage="Merchant" />
+    ),
+    key: 'merchant',
     render: (row: PaymentInList) => row.merchant.name,
+    maxWidth: '30%',
   },
   {
-    label: "Amount (€)",
-    key: "amount",
-    align: "right",
+    label: (
+      <FormattedMessage id="table.header.amount" defaultMessage="Amount (€)" />
+    ),
+    key: 'amount',
+    align: 'right',
     sortable: true,
+    render: (row: PaymentInList) => (
+      <FormattedNumber value={row.amount} minimumFractionDigits={2} />
+    ),
   },
   {
-    label: "On",
-    key: "created",
-    render: (row: PaymentInList) => new Date(row.created).toLocaleDateString(),
+    label: <FormattedMessage id="table.header.created" defaultMessage="On" />,
+    key: 'created',
+    render: (row: PaymentInList) => (
+      <FormattedDate value={new Date(row.created)} dateStyle="long" />
+    ),
   },
   {
-    label: "Status",
-    key: "status",
+    label: (
+      <FormattedMessage id="table.header.status" defaultMessage="Status" />
+    ),
+    key: 'status',
     render: (row: PaymentInList) => (
       <Badge type={getBadgeColorForStatus(row.status)}>
         <FormattedMessage
@@ -52,7 +70,7 @@ export const Payments = (): JSX.Element => {
   return (
     <section>
       <PageHeader>
-        <FormattedMessage id="pages.payments.title" defaultMessage="Payments" />
+        <FormattedMessage id="page.payments.title" defaultMessage="Payments" />
       </PageHeader>
       <div>
         <input

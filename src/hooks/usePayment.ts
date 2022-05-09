@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { useQuery } from "react-query";
+import { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
 
-import { get } from "../api";
+import { get } from '../api';
 
 export const usePayment = (id: string) => {
   const paymentQuery = useQuery<Payment, unknown>(
-    ["payment", id],
+    ['payment', id],
     () => get(`/payments/${id}`),
     {
       enabled: Boolean(id),

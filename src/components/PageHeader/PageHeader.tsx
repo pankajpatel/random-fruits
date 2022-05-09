@@ -1,8 +1,8 @@
-import { ChangeEvent, ReactNode, useContext } from "react";
-import { Header } from "@app/ds/Header";
-import { Select } from "@app/ds/Select";
-import { LocaleContext } from "@app/contexts/Locale";
-import styled from "styled-components";
+import { ChangeEvent, ReactNode, useContext } from 'react';
+import { Header } from '@app/ds/Header';
+import { Select } from '@app/ds/Select';
+import { LocaleContext } from '@app/contexts/Locale';
+import styled from 'styled-components';
 
 const H2 = styled.h2`
   margin-top: 1rem;

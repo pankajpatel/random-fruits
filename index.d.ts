@@ -1,17 +1,17 @@
-declare module "craco-alias";
+declare module 'craco-alias';
 
-type Locale = "en" | "fr";
+type Locale = 'en' | 'fr';
 
 type Status =
-  | "not_started"
-  | "ready"
-  | "in_progress"
-  | "finished"
-  | "failed"
-  | "pending"
-  | "paid"
-  | "cancelled"
-  | "default";
+  | 'not_started'
+  | 'ready'
+  | 'in_progress'
+  | 'finished'
+  | 'failed'
+  | 'pending'
+  | 'paid'
+  | 'cancelled'
+  | 'default';
 
 interface Merchant {
   name: string;
@@ -36,6 +36,6 @@ interface Payment {
   paymentPlan: Array<Installment>;
 }
 
-type PaymentInList = Omit<Payment, "paymentPlan">;
+type PaymentInList = Omit<Payment, 'paymentPlan'>;
 
 type Payments = Array<PaymentInList>;

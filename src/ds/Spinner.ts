@@ -1,6 +1,6 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
-export const Spinner = styled.div`
+export const Spinner = styled.div.attrs((props) => ({}))`
   border: 2px solid transparent;
   border-left-color: #333;
   border-radius: 50%;
@@ -10,4 +10,3 @@ export const Spinner = styled.div`
   margin: 0.25rem;
   animation: keep-spinning 500ms infinite;
 `;
-

@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
 export interface ILocaleContext {
   locale: Locale;
@@ -6,6 +6,6 @@ export interface ILocaleContext {
 }
 
 export const LocaleContext = createContext<ILocaleContext>({
-  locale: "en",
+  locale: 'en',
   setLocale: (newLocale: Locale) => {},
 });

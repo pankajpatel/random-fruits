@@ -5,6 +5,24 @@
 - List all the payments(transactions)
 - View Payment(Payment) details and Installments
 
+## Libraries Used
+
+- React: [react](https://reactjs.org/)
+- Routing: [wouter](https://www.npmjs.com/package/wouter)
+- I18N: [react-intl](https://formatjs.io/docs/react-intl/)
+- Styling: [styled-components](https://styled-components.com/)
+- CRA Customization for import aliases: [@craco/craco](https://www.npmjs.com/@craco/craco)
+- Attaching font stylesheets to head: [react-helmet](https://www.npmjs.com/package/react-helmet)
+- API handling: [react-query](https://www.npmjs.com/package/react-query) and fetch API
+- API MOcking: [msw](https://www.npmjs.com/package/msw)
+- Typescript
+- Jest
+- Webpack
+- Babel
+- ESLint
+- Prettier
+- LintStaged
+- Husky
 
 ## Getting Started with Create React App
 

@@ -1,8 +1,8 @@
-import { useQuery, UseQueryResult } from "react-query";
-import { useEffect, useState } from "react";
+import { useQuery, UseQueryResult } from 'react-query';
+import { useEffect, useState } from 'react';
 
-import { get } from "../api";
-import { SORT_DIRECTIONS, SORT_FUNCTIONS } from "../constants/sorting";
+import { get } from '../api';
+import { SORT_DIRECTIONS, SORT_FUNCTIONS } from '../constants/sorting';
 
 interface UsePayments {
   payments: PaymentInList[];
@@ -13,11 +13,12 @@ interface UsePayments {
   filter: (val: string) => void;
 }
 
-export const usePayments = (): UsePayments & UseQueryResult<PaymentInList[]> => {
+export const usePayments = (): UsePayments &
+  UseQueryResult<PaymentInList[]> => {
   const [payments, setPayments] = useState<PaymentInList[]>([]);
   const queryResult = useQuery<PaymentInList[], unknown>(
-    "payments",
-    () => get("/payments"),
+    'payments',
+    () => get('/payments'),
     {
       retry: false,
     }
@@ -35,7 +36,7 @@ export const usePayments = (): UsePayments & UseQueryResult<PaymentInList[]> => 
     sortByKey: keyof PaymentInList,
     sortDirection: keyof typeof SORT_DIRECTIONS
   ) => {
-    if (sortByKey === "merchant") {
+    if (sortByKey === 'merchant') {
       return;
     }
     const sortedRows = [...payments].sort(

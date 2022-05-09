@@ -20,12 +20,12 @@ exports[`Table should render without crashing 1`] = `
 }
 
 .c3 {
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 0.5rem;
   text-align: left;
 }
 
 .c1 {
-  padding: 0.75rem;
+  padding: 0.75rem 0.5rem;
   text-align: left;
 }
 

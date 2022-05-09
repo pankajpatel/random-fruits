@@ -4,17 +4,15 @@ import {
   RestContext,
   RESTMethods,
   RestRequest,
-} from "msw";
-import { setupServer } from "msw/node";
-import { BASE_URL } from "../api";
+} from 'msw';
+import { setupServer } from 'msw/node';
+import { BASE_URL } from '../api';
 
-import paymentsJSON from "../fixtures/payments.json";
+import paymentsJSON from '../fixtures/payments.json';
 
 type Value = any;
 
-type Response =
-  | Record<string, Value>
-  | Array<Record<string, Value>>;
+type Response = Record<string, Value> | Array<Record<string, Value>>;
 
 type RequestMockConfig = {
   baseUrl?: string;
@@ -63,7 +61,7 @@ export const mockEndpoint = (config: RequestMockConfig) => {
 
 mockEndpoint({
   method: RESTMethods.GET,
-  url: "/payments",
+  url: '/payments',
   status: 200,
   response: paymentsJSON,
   delayInMs: 200,

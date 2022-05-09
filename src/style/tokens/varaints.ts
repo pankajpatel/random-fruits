@@ -7,8 +7,6 @@ export const VARIANTS = {
   ERROR: 'error',
   DEFAULT: 'default',
   DISABLED: 'disabled',
-}
+};
 
-
-
-export type PalletIdentifiers = "success" | "info" | "warning" | "error";
+export type PalletIdentifiers = 'success' | 'info' | 'warning' | 'error';

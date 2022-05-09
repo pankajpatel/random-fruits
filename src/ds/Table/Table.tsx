@@ -1,12 +1,13 @@
-import { ReactNode } from "react";
-import styled from "styled-components";
+import { ReactNode } from 'react';
+import styled from 'styled-components';
 
 export interface TableCell<T extends unknown> {
-  label: string;
+  label: ReactNode;
   key: keyof T;
   render?: (row: T) => ReactNode;
-  align?: "left" | "right";
+  align?: 'left' | 'right';
   sortable?: boolean;
+  maxWidth?: string;
 }
 
 interface TableProps<T> {
@@ -34,15 +35,17 @@ const Row = styled.tr`
   }
 `;
 
-const Cell = styled.td<{ align: "left" | "right" }>`
-  padding: 0.5rem 0.75rem;
-  text-align: ${(props) => props.align ?? "left"};
+const Cell = styled.td<{ align: 'left' | 'right' }>`
+  padding: 0.75rem 0.5rem;
+  text-align: ${(props) => props.align ?? 'left'};
 `;
 
-const HeaderCell = styled.th<{ align: "left" | "right", clickable: boolean }>`
-  padding: 0.75rem;
-  text-align: ${(props) => props.align ?? "left"};
-  ${(props) => props.clickable && `
+const HeaderCell = styled.th<{ align: 'left' | 'right'; clickable: boolean }>`
+  padding: 0.75rem 0.5rem;
+  text-align: ${(props) => props.align ?? 'left'};
+  ${(props) =>
+    props.clickable &&
+    `
     cursor: pointer;
     &:hover { background-color: #eee; }
   `};
@@ -59,12 +62,14 @@ export const Table = <T extends unknown>({
   <StyledTable>
     <thead>
       <tr>
-        {cells.map(({ label, align = "left", key, sortable }) => (
+        {cells.map(({ label, align = 'left', key, sortable }) => (
           <HeaderCell
-            key={label}
+            key={key as string}
             align={align}
             clickable={Boolean(sortable)}
-            onClick={() => (sortable && onHeaderClick ? onHeaderClick : NOOP)(key)}
+            onClick={() =>
+              (sortable && onHeaderClick ? onHeaderClick : NOOP)(key)
+            }
           >
             {label}
             {sortable && <small>⇵</small>}
@@ -79,27 +84,35 @@ export const Table = <T extends unknown>({
           onClick={() => onRowClick(row)}
           title="Click open Payment Details"
         >
-          {cells.map(({ label, key, render, align = "left" }: TableCell<T>): ReactNode => {
-            if (typeof render === "function") {
+          {cells.map(
+            ({
+              label,
+              key,
+              render,
+              align = 'left',
+            }: TableCell<T>): ReactNode => {
+              const cellKey = key as string;
+              if (typeof render === 'function') {
+                return (
+                  <Cell align={align} key={cellKey}>
+                    {render(row)}
+                  </Cell>
+                );
+              }
+              if (key) {
+                return (
+                  <Cell align={align} key={cellKey}>
+                    <>{row[key]}</>
+                  </Cell>
+                );
+              }
               return (
-                <Cell align={align} key={label}>
-                  {render(row)}
+                <Cell align={align} key={cellKey}>
+                  ' '
                 </Cell>
               );
             }
-            if (key) {
-              return (
-                <Cell align={align} key={label}>
-                  <>{row[key]}</>
-                </Cell>
-              );
-            }
-            return (
-              <Cell align={align} key={label}>
-                ' '
-              </Cell>
-            );
-          })}
+          )}
         </Row>
       ))}
     </tbody>

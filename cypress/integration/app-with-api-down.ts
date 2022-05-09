@@ -1,0 +1,42 @@
+import { BASE_URL } from '../constants';
+import paymentsJSON from '../fixtures/payments.json';
+import paymentJSON from '../fixtures/payment.json';
+
+describe('Payments App: Happy Path', () => {
+  beforeEach(() => {
+    cy.intercept(`${BASE_URL}/payments`, {
+      statusCode: 404,
+    });
+    cy.intercept(`${BASE_URL}/payments/payment_i2NJhL`, {
+      statusCode: 404,
+    });
+  });
+
+  it('on Visit Home, should redirect to payments', () => {
+    cy.visit('http://localhost:3000/');
+
+    // Redirected to initial payments list
+    cy.location().should((loc) => {
+      expect(loc.href).to.eq('http://localhost:3000/payments');
+    });
+
+    // Has the option to change language
+    cy.get('select').should('be.visible');
+    cy.get('select').should('have.value', 'en');
+
+    // Has the input to filter the list
+    cy.get('input').should('be.visible');
+
+    cy.contains('Failed to load');
+  });
+
+  it('on Visit Home, should redirect to payments', () => {
+    cy.visit(`http://localhost:3000/payments/${paymentJSON.id}`);
+
+    // Has the option to change language
+    cy.get('select').should('be.visible');
+    cy.get('select').should('have.value', 'en');
+
+    cy.contains('Failed to load payment payment_i2NJhL details');
+  });
+});

@@ -1,0 +1,134 @@
+[
+  {
+    "status": "not_started",
+    "id": "payment_I4Hnhg",
+    "created": 1648764000000,
+    "customer_name": "Victor Hugo",
+    "merchant": {
+      "name": "Super Merchant"
+    },
+    "amount": 45900,
+    "installmentsCount": 3
+  },
+  {
+    "status": "ready",
+    "id": "payment_i2NJhL",
+    "created": 1649023200000,
+    "customer_name": "Émile Zola",
+    "merchant": {
+      "name": "Super Merchant"
+    },
+    "amount": 356050,
+    "installmentsCount": 10
+  },
+  {
+    "status": "ready",
+    "id": "payment_CBlyPJ",
+    "created": 1649023200000,
+    "customer_name": "Albert Camus",
+    "merchant": {
+      "name": "Super Merchant"
+    },
+    "amount": 155800,
+    "installmentsCount": 6
+  },
+  {
+    "status": "in_progress",
+    "id": "payment_5xMZGr",
+    "created": 1654293600000,
+    "customer_name": "Charles Baudelaire",
+    "merchant": {
+      "name": "Super Merchant"
+    },
+    "amount": 87600,
+    "installmentsCount": 3
+  },
+  {
+    "status": "ready",
+    "id": "payment_i5eBhH",
+    "created": 1651615200000,
+    "customer_name": "Gustave Flaubert",
+    "merchant": {
+      "name": "Super Merchant"
+    },
+    "amount": 54600,
+    "installmentsCount": 4
+  },
+  {
+    "status": "paid",
+    "id": "payment_0xppRA",
+    "created": 1651615200000,
+    "customer_name": "Jean de La Fontaine",
+    "merchant": {
+      "name": "Super Merchant"
+    },
+    "amount": 7860,
+    "installmentsCount": 1
+  },
+  {
+    "status": "paid",
+    "id": "payment_9VV3qa",
+    "created": 1656885600000,
+    "customer_name": "Marcel Proust",
+    "merchant": {
+      "name": "Super Merchant"
+    },
+    "amount": 80000,
+    "installmentsCount": 3
+  },
+  {
+    "status": "in_progress",
+    "id": "payment_ol4ocu",
+    "created": 1641250800000,
+    "customer_name": "Georges Sand",
+    "merchant": {
+      "name": "Super Merchant"
+    },
+    "amount": 30250,
+    "installmentsCount": 2
+  },
+  {
+    "status": "paid",
+    "id": "payment_VNcFa2",
+    "created": 1643929200000,
+    "customer_name": "Guy de Maupassant",
+    "merchant": {
+      "name": "Super Merchant"
+    },
+    "amount": 35200,
+    "installmentsCount": 3
+  },
+  {
+    "status": "default",
+    "id": "payment_10",
+    "created": 1646348400000,
+    "customer_name": "Nicolas Boileau",
+    "merchant": {
+      "name": "Super Merchant"
+    },
+    "amount": 66600,
+    "installmentsCount": 3
+  },
+  {
+    "status": "default",
+    "id": "payment_88X2g9",
+    "created": 1651615200000,
+    "customer_name": "Alfred de Musset",
+    "merchant": {
+      "name": "Super Merchant"
+    },
+    "amount": 100340,
+    "installmentsCount": 2
+  },
+  {
+    "status": "paid",
+    "id": "payment_pfEAIu",
+    "created": 1654293600000,
+    "customer_name": "Marguerite Duras",
+    "merchant": {
+      "name": "Super Merchant"
+    },
+    "amount": 176490,
+    "installmentsCount": 4
+  }
+]

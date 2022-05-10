@@ -1,8 +1,6 @@
 import { BASE_URL } from '../constants';
-import paymentsJSON from '../fixtures/payments.json';
-import paymentJSON from '../fixtures/payment.json';
 
-describe('Payments App: Happy Path', () => {
+describe('Payments App: API Down', () => {
   beforeEach(() => {
     cy.intercept(`${BASE_URL}/payments`, {
       statusCode: 404,
@@ -31,7 +29,7 @@ describe('Payments App: Happy Path', () => {
   });
 
   it('on Visit Home, should redirect to payments', () => {
-    cy.visit(`http://localhost:3000/payments/${paymentJSON.id}`);
+    cy.visit(`http://localhost:3000/payments/payment_12345`);
 
     // Has the option to change language
     cy.get('select').should('be.visible');

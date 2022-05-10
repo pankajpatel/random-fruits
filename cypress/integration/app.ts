@@ -58,6 +58,32 @@ describe('Payments App: Happy Path', () => {
     cy.get('table tr').should('have.length', paymentsJSON.length + 1);
   });
 
+  it('should sort list clicking amount column', () => {
+    cy.get('table tr').should('have.length', paymentsJSON.length + 1);
+
+    cy.get('thead tr th').contains('Amount').click();
+
+    cy.get('table tr').should('have.length', paymentsJSON.length + 1);
+    cy.get('table tbody tr')
+      .first()
+      .should(
+        'contain',
+        paymentsJSON
+          .sort((a, b) => a.amount - b.amount)[0]
+          .amount.toLocaleString('en')
+      );
+
+    cy.get('thead tr th').contains('Amount').click();
+    cy.get('table tbody tr')
+      .last()
+      .should(
+        'contain',
+        paymentsJSON
+          .sort((a, b) => a.amount - b.amount)[0]
+          .amount.toLocaleString('en')
+      );
+  });
+
   it('should take user to payment details on clicking the payment row', () => {
     cy.contains(paymentJSON.customer_name).click();
 

@@ -2,16 +2,7 @@ declare module 'craco-alias';
 
 type Locale = 'en' | 'fr';
 
-type Status =
-  | 'not_started'
-  | 'ready'
-  | 'in_progress'
-  | 'finished'
-  | 'failed'
-  | 'pending'
-  | 'paid'
-  | 'cancelled'
-  | 'default';
+type Status = 'not_started' | 'ready' | 'in_progress' | 'paid' | 'default';
 
 interface Merchant {
   name: string;

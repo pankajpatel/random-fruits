@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 
-import { get } from '../api';
+import { get } from '@app/api';
 
 export const usePayment = (id: string) => {
   const paymentQuery = useQuery<Payment, unknown>(

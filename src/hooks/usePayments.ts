@@ -1,20 +1,44 @@
 import { useQuery, UseQueryResult } from 'react-query';
 import { useCallback, useEffect, useState } from 'react';
 
-import { get } from '../api';
-import { SORT_DIRECTIONS, SORT_FUNCTIONS } from '../constants/sorting';
+import { get } from '@app/api';
+import { SORT_DIRECTIONS, SORT_FUNCTIONS } from '@app/constants/sorting';
+
+type SortDirection = keyof typeof SORT_DIRECTIONS;
 
 interface UsePayments {
   payments?: PaymentInList[];
   sortRows: (
     sortByKey: keyof PaymentInList,
-    sortDirection: keyof typeof SORT_DIRECTIONS
+    sortDirection?: SortDirection
   ) => void;
   filter: (val: string) => void;
 }
 
+type SortOrder = [keyof PaymentInList, SortDirection] | null | undefined;
+
+const getSortDirection = (
+  key: keyof PaymentInList,
+  direction?: SortDirection,
+  previousSortOrder?: SortOrder
+) => {
+  if (direction) {
+    return direction;
+  }
+
+  if (!previousSortOrder) {
+    return SORT_DIRECTIONS.ASC;
+  }
+
+  return previousSortOrder[0] === key &&
+    previousSortOrder[1] === SORT_DIRECTIONS.ASC
+    ? SORT_DIRECTIONS.DESC
+    : SORT_DIRECTIONS.ASC;
+};
+
 export const usePayments = (): UsePayments &
   UseQueryResult<PaymentInList[]> => {
+  const [sortOrder, setSortOrder] = useState<SortOrder>();
   const [payments, setPayments] = useState<PaymentInList[]>();
   const queryResult = useQuery<PaymentInList[], unknown>(
     'payments',
@@ -28,26 +52,28 @@ export const usePayments = (): UsePayments &
   const { data } = queryResult;
 
   const sortRows = useCallback(
-    (
-      sortByKey: keyof PaymentInList,
-      sortDirection: keyof typeof SORT_DIRECTIONS
-    ) => {
+    (sortByKey: keyof PaymentInList, sortDirection?: SortDirection) => {
       if (sortByKey === 'merchant') {
         return;
       }
+      const direction = getSortDirection(sortByKey, sortDirection, sortOrder);
+
       const sortedRows = [...(data ?? [])].sort(
-        SORT_FUNCTIONS[sortDirection]((obj) => obj[sortByKey])
+        SORT_FUNCTIONS[direction]((obj) => obj[sortByKey])
       );
+      setSortOrder([sortByKey, direction]);
       setPayments(sortedRows);
     },
-    [data]
+    [data, sortOrder]
   );
 
   useEffect(() => {
-    if (data) {
+    if (data && sortOrder?.[0] !== 'status' && sortOrder?.[1] !== 'ASC') {
       sortRows('status', SORT_DIRECTIONS.ASC);
     }
-  }, [data, sortRows]);
+    // Adding sortRows to the dependencies array will cause the infinite loop as the callback is called again
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data]);
 
   const filter = (_val: string) => {
     const val = _val.toLowerCase();

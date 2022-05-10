@@ -3,8 +3,8 @@ import { FormattedDate, FormattedMessage } from 'react-intl';
 
 import { Badge } from '@app/ds/Badge';
 import { Label } from '@app/ds/Label';
+import { Amount } from '@app/components/Amount/Amount';
 import { getBadgeColorForStatus } from '@app/utils/getBadgeColorForStatus';
-import { Amount } from '../Amount/Amount';
 
 const Container = styled.div`
   padding: 0.5rem;

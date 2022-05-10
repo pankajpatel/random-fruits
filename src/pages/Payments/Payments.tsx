@@ -4,7 +4,6 @@ import { useLocation } from 'wouter';
 import { Badge } from '@app/ds/Badge';
 import { Spinner } from '@app/ds/Spinner';
 import { Table, TableCell } from '@app/ds/Table/Table';
-import { SORT_DIRECTIONS } from '@app/constants/sorting';
 import { usePayments } from '@app/hooks/usePayments';
 import { getBadgeColorForStatus } from '@app/utils/getBadgeColorForStatus';
 import { PageHeader } from '@app/components/PageHeader/PageHeader';
@@ -83,7 +82,7 @@ export const Payments = (): JSX.Element => {
           cells={CellConfig}
           onRowClick={(row: PaymentInList) => gotTo(`/payments/${row.id}`)}
           onHeaderClick={(key: keyof PaymentInList) => {
-            sortRows(key as keyof PaymentInList, SORT_DIRECTIONS.ASC);
+            sortRows(key as keyof PaymentInList);
           }}
           noResultsMessage={
             <FormattedMessage

@@ -17,5 +17,6 @@
     "jsx": "react-jsx"
   },
   "include": ["src", "./index.d.ts"],
+  "ignore": ["node_modules"],
   "extends": "./tsconfig.paths.json"
 }

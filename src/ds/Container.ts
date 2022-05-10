@@ -1,8 +1,10 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  width: 960px;
-  margin: 0 auto;
+  @media (min-width: 960px) {
+    width: 960px;
+    margin: 0 auto;
+  }
 `;
 
 const gutterCss = css`

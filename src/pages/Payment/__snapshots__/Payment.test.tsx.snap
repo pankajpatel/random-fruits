@@ -186,7 +186,7 @@ exports[`Payment should render without crashing 2`] = `
   line-height: 1;
 }
 
-.c16 {
+.c18 {
   padding: 0.35em 0.55em;
   border-radius: 0.4em;
   background-color: #fafafa;
@@ -210,32 +210,40 @@ exports[`Payment should render without crashing 2`] = `
   font-size: 1rem;
 }
 
-.c10 {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.c13 {
+.c14 {
   cursor: pointer;
   font-size: 1.1rem;
 }
 
-.c13:nth-child(even) {
+.c14:nth-child(even) {
   background-color: #fafafa;
 }
 
-.c13:hover {
+.c14:hover {
   background-color: #eee;
 }
 
-.c14 {
+.c16 {
   padding: 0.75rem 0.5rem;
   text-align: left;
 }
 
-.c15 {
+.c16 .c5 {
+  display: none;
+}
+
+.c17 {
   padding: 0.75rem 0.5rem;
   text-align: right;
+}
+
+.c17 .c5 {
+  display: none;
+}
+
+.c10 {
+  border-collapse: collapse;
+  width: 100%;
 }
 
 .c11 {
@@ -282,6 +290,38 @@ exports[`Payment should render without crashing 2`] = `
   padding: 0.5rem;
   display: inline-block;
   border-radius: 0.25rem;
+}
+
+@media (max-width:768px) {
+  .c10 {
+    display: grid;
+  }
+
+  .c10 thead {
+    display: none;
+  }
+
+  .c10 tbody {
+    display: grid;
+  }
+
+  .c10 .c13 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .c10 .c15 {
+    text-align: left;
+    padding: 0;
+  }
+
+  .c10 .c15 .c5 {
+    display: block;
+    font-size: 0.75em;
+    line-height: 1.2;
+  }
 }
 
 <div>
@@ -439,29 +479,49 @@ exports[`Payment should render without crashing 2`] = `
         </thead>
         <tbody>
           <tr
-            class="c13"
+            class="c13 c14"
             title="Click to open payment details"
           >
             <td
-              class="c14"
+              class="c15 c16"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.dueDate
+              </label>
               Mon Apr 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.amount
+              </label>
               35555
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.fee
+              </label>
               500
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.status
+              </label>
               <span
                 class="c7 c8"
                 type="info"
@@ -471,31 +531,51 @@ exports[`Payment should render without crashing 2`] = `
             </td>
           </tr>
           <tr
-            class="c13"
+            class="c13 c14"
             title="Click to open payment details"
           >
             <td
-              class="c14"
+              class="c15 c16"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.dueDate
+              </label>
               Wed May 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.amount
+              </label>
               35555
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.fee
+              </label>
               0
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.status
+              </label>
               <span
-                class="c7 c16"
+                class="c7 c18"
                 type="default"
               >
                 status.not_started
@@ -503,31 +583,51 @@ exports[`Payment should render without crashing 2`] = `
             </td>
           </tr>
           <tr
-            class="c13"
+            class="c13 c14"
             title="Click to open payment details"
           >
             <td
-              class="c14"
+              class="c15 c16"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.dueDate
+              </label>
               Sat Jun 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.amount
+              </label>
               35555
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.fee
+              </label>
               0
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.status
+              </label>
               <span
-                class="c7 c16"
+                class="c7 c18"
                 type="default"
               >
                 status.not_started
@@ -535,31 +635,51 @@ exports[`Payment should render without crashing 2`] = `
             </td>
           </tr>
           <tr
-            class="c13"
+            class="c13 c14"
             title="Click to open payment details"
           >
             <td
-              class="c14"
+              class="c15 c16"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.dueDate
+              </label>
               Mon Jul 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.amount
+              </label>
               35555
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.fee
+              </label>
               0
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.status
+              </label>
               <span
-                class="c7 c16"
+                class="c7 c18"
                 type="default"
               >
                 status.not_started
@@ -567,31 +687,51 @@ exports[`Payment should render without crashing 2`] = `
             </td>
           </tr>
           <tr
-            class="c13"
+            class="c13 c14"
             title="Click to open payment details"
           >
             <td
-              class="c14"
+              class="c15 c16"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.dueDate
+              </label>
               Thu Aug 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.amount
+              </label>
               35555
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.fee
+              </label>
               0
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.status
+              </label>
               <span
-                class="c7 c16"
+                class="c7 c18"
                 type="default"
               >
                 status.not_started
@@ -599,31 +739,51 @@ exports[`Payment should render without crashing 2`] = `
             </td>
           </tr>
           <tr
-            class="c13"
+            class="c13 c14"
             title="Click to open payment details"
           >
             <td
-              class="c14"
+              class="c15 c16"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.dueDate
+              </label>
               Sun Sep 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.amount
+              </label>
               35555
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.fee
+              </label>
               0
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.status
+              </label>
               <span
-                class="c7 c16"
+                class="c7 c18"
                 type="default"
               >
                 status.not_started
@@ -631,31 +791,51 @@ exports[`Payment should render without crashing 2`] = `
             </td>
           </tr>
           <tr
-            class="c13"
+            class="c13 c14"
             title="Click to open payment details"
           >
             <td
-              class="c14"
+              class="c15 c16"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.dueDate
+              </label>
               Tue Oct 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.amount
+              </label>
               35555
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.fee
+              </label>
               0
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.status
+              </label>
               <span
-                class="c7 c16"
+                class="c7 c18"
                 type="default"
               >
                 status.not_started
@@ -663,31 +843,51 @@ exports[`Payment should render without crashing 2`] = `
             </td>
           </tr>
           <tr
-            class="c13"
+            class="c13 c14"
             title="Click to open payment details"
           >
             <td
-              class="c14"
+              class="c15 c16"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.dueDate
+              </label>
               Fri Nov 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.amount
+              </label>
               35555
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.fee
+              </label>
               0
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.status
+              </label>
               <span
-                class="c7 c16"
+                class="c7 c18"
                 type="default"
               >
                 status.not_started
@@ -695,31 +895,51 @@ exports[`Payment should render without crashing 2`] = `
             </td>
           </tr>
           <tr
-            class="c13"
+            class="c13 c14"
             title="Click to open payment details"
           >
             <td
-              class="c14"
+              class="c15 c16"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.dueDate
+              </label>
               Sun Dec 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.amount
+              </label>
               35555
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.fee
+              </label>
               0
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.status
+              </label>
               <span
-                class="c7 c16"
+                class="c7 c18"
                 type="default"
               >
                 status.not_started
@@ -727,31 +947,51 @@ exports[`Payment should render without crashing 2`] = `
             </td>
           </tr>
           <tr
-            class="c13"
+            class="c13 c14"
             title="Click to open payment details"
           >
             <td
-              class="c14"
+              class="c15 c16"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.dueDate
+              </label>
               Wed Jan 04 2023 00:00:00 GMT+0100 (Central European Standard Time)
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.amount
+              </label>
               35555
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.fee
+              </label>
               0
                €
             </td>
             <td
-              class="c15"
+              class="c15 c17"
             >
+              <label
+                class="c5 c6"
+              >
+                table.header.status
+              </label>
               <span
-                class="c7 c16"
+                class="c7 c18"
                 type="default"
               >
                 status.not_started

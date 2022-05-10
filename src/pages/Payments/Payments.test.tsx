@@ -22,7 +22,7 @@ describe('Payments', () => {
 
     expect(screen.getByTestId('spinner')).toBeInTheDocument();
 
-    await screen.findByText('table.header.customer');
+    await screen.findAllByText('table.header.customerName');
 
     expect(container).toMatchSnapshot();
     expect(screen.getByRole('table')).toBeInTheDocument();

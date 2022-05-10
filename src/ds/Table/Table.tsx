@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
+import { Label } from '../Label';
 
 export interface TableCell<T extends unknown> {
   label: ReactNode;
@@ -18,10 +19,9 @@ interface TableProps<T> {
   noResultsMessage?: ReactNode;
 }
 
-const StyledTable = styled.table`
-  border-collapse: collapse;
-  width: 100%;
-`;
+interface AlignmentProps {
+  align: 'left' | 'right';
+}
 
 const Row = styled.tr`
   cursor: pointer;
@@ -36,10 +36,6 @@ const Row = styled.tr`
   }
 `;
 
-interface AlignmentProps {
-  align: 'left' | 'right';
-}
-
 const defaultCellCss = css<AlignmentProps>`
   padding: 0.75rem 0.5rem;
   text-align: ${(props) => props.align ?? 'left'};
@@ -47,6 +43,44 @@ const defaultCellCss = css<AlignmentProps>`
 
 const Cell = styled.td<AlignmentProps & { maxWidth?: string }>`
   ${defaultCellCss}
+
+  ${Label} {
+    display: none;
+  }
+`;
+
+const StyledTable = styled.table`
+  border-collapse: collapse;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    display: grid;
+
+    thead {
+      display: none;
+    }
+    tbody {
+      display: grid;
+    }
+
+    ${Row} {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    ${Cell} {
+      text-align: left;
+      padding: 0;
+
+      ${Label} {
+        display: block;
+        font-size: 0.75em;
+        line-height: 1.2;
+      }
+    }
+  }
 `;
 
 const HeaderCell = styled.th<AlignmentProps & { clickable: boolean }>`
@@ -112,6 +146,7 @@ export const Table = <T extends unknown>({
               if (typeof render === 'function') {
                 return (
                   <Cell align={align} key={cellKey} maxWidth={maxWidth}>
+                    <Label>{label}</Label>
                     {render(row)}
                   </Cell>
                 );
@@ -119,6 +154,7 @@ export const Table = <T extends unknown>({
               if (key) {
                 return (
                   <Cell align={align} key={cellKey} maxWidth={maxWidth}>
+                    <Label>{label}</Label>
                     <>{row[key]}</>
                   </Cell>
                 );

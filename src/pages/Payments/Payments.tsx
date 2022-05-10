@@ -14,7 +14,7 @@ const CellConfig: Array<TableCell<PaymentInList>> = [
   {
     label: (
       <FormattedMessage
-        id="table.header.customer"
+        id="table.header.customerName"
         defaultMessage="Customer Name"
       />
     ),
@@ -23,7 +23,10 @@ const CellConfig: Array<TableCell<PaymentInList>> = [
   },
   {
     label: (
-      <FormattedMessage id="table.header.merchant" defaultMessage="Merchant" />
+      <FormattedMessage
+        id="table.header.merchantName"
+        defaultMessage="Merchant"
+      />
     ),
     key: 'merchant',
     render: (row: PaymentInList) => row.merchant.name,

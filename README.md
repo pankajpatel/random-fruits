@@ -5,6 +5,10 @@
 - List all the payments(transactions)
 - View Payment(Payment) details and Installments
 
+## Notes
+
+- Entrypoint: `./src/index.tsx`
+
 ## Libraries Used
 
 - React: [react](https://reactjs.org/)

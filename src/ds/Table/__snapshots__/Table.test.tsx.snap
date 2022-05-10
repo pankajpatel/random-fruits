@@ -6,6 +6,20 @@ exports[`Table should not render empty row message & header when prop was not av
   width: 100%;
 }
 
+@media (max-width:768px) {
+  .c0 {
+    display: grid;
+  }
+
+  .c0 thead {
+    display: none;
+  }
+
+  .c0 tbody {
+    display: grid;
+  }
+}
+
 <div>
   <table
     class="c0"
@@ -19,6 +33,20 @@ exports[`Table should render empty row message 1`] = `
 .c0 {
   border-collapse: collapse;
   width: 100%;
+}
+
+@media (max-width:768px) {
+  .c0 {
+    display: grid;
+  }
+
+  .c0 thead {
+    display: none;
+  }
+
+  .c0 tbody {
+    display: grid;
+  }
 }
 
 <div>
@@ -39,27 +67,69 @@ exports[`Table should render empty row message 1`] = `
 `;
 
 exports[`Table should render rows for cell config 1`] = `
+.c6 {
+  display: block;
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.c2 {
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.c2:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.c2:hover {
+  background-color: #eee;
+}
+
+.c4 {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+}
+
+.c4 .c5 {
+  display: none;
+}
+
 .c0 {
   border-collapse: collapse;
   width: 100%;
 }
 
-.c1 {
-  cursor: pointer;
-  font-size: 1.1rem;
-}
+@media (max-width:768px) {
+  .c0 {
+    display: grid;
+  }
 
-.c1:nth-child(even) {
-  background-color: #fafafa;
-}
+  .c0 thead {
+    display: none;
+  }
 
-.c1:hover {
-  background-color: #eee;
-}
+  .c0 tbody {
+    display: grid;
+  }
 
-.c2 {
-  padding: 0.75rem 0.5rem;
-  text-align: left;
+  .c0 .c1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .c0 .c3 {
+    text-align: left;
+    padding: 0;
+  }
+
+  .c0 .c3 .c5 {
+    display: block;
+    font-size: 0.75em;
+    line-height: 1.2;
+  }
 }
 
 <div>
@@ -68,17 +138,27 @@ exports[`Table should render rows for cell config 1`] = `
   >
     <tbody>
       <tr
-        class="c1"
+        class="c1 c2"
         title="Click to open payment details"
       >
         <td
-          class="c2"
+          class="c3 c4"
         >
+          <label
+            class="c5 c6"
+          >
+            Customer Name
+          </label>
           Émile Zola
         </td>
         <td
-          class="c2"
+          class="c3 c4"
         >
+          <label
+            class="c5 c6"
+          >
+            Created On
+          </label>
           04/04/2022
         </td>
       </tr>

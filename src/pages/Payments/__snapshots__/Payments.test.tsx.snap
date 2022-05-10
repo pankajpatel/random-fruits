@@ -128,7 +128,7 @@ exports[`Payments should render when transactions are present 1`] = `
 `;
 
 exports[`Payments should render when transactions are present 2`] = `
-.c11 {
+.c15 {
   padding: 0.35em 0.55em;
   border-radius: 0.4em;
   background-color: #fce4ec;
@@ -136,7 +136,7 @@ exports[`Payments should render when transactions are present 2`] = `
   line-height: 1;
 }
 
-.c12 {
+.c16 {
   padding: 0.35em 0.55em;
   border-radius: 0.4em;
   background-color: #e3f2fd;
@@ -144,7 +144,7 @@ exports[`Payments should render when transactions are present 2`] = `
   line-height: 1;
 }
 
-.c13 {
+.c17 {
   padding: 0.35em 0.55em;
   border-radius: 0.4em;
   background-color: #fafafa;
@@ -152,7 +152,7 @@ exports[`Payments should render when transactions are present 2`] = `
   line-height: 1;
 }
 
-.c14 {
+.c18 {
   padding: 0.35em 0.55em;
   border-radius: 0.4em;
   background-color: #e6fffa;
@@ -160,32 +160,46 @@ exports[`Payments should render when transactions are present 2`] = `
   line-height: 1;
 }
 
-.c5 {
-  border-collapse: collapse;
-  width: 100%;
+.c13 {
+  display: block;
+  font-size: 1.2rem;
+  color: #aaa;
 }
 
-.c8 {
+.c9 {
   cursor: pointer;
   font-size: 1.1rem;
 }
 
-.c8:nth-child(even) {
+.c9:nth-child(even) {
   background-color: #fafafa;
 }
 
-.c8:hover {
+.c9:hover {
   background-color: #eee;
 }
 
-.c9 {
+.c11 {
   padding: 0.75rem 0.5rem;
   text-align: left;
 }
 
-.c10 {
+.c11 .c12 {
+  display: none;
+}
+
+.c14 {
   padding: 0.75rem 0.5rem;
   text-align: right;
+}
+
+.c14 .c12 {
+  display: none;
+}
+
+.c5 {
+  border-collapse: collapse;
+  width: 100%;
 }
 
 .c6 {
@@ -276,6 +290,38 @@ exports[`Payments should render when transactions are present 2`] = `
   flex-direction: row-reverse;
 }
 
+@media (max-width:768px) {
+  .c5 {
+    display: grid;
+  }
+
+  .c5 thead {
+    display: none;
+  }
+
+  .c5 tbody {
+    display: grid;
+  }
+
+  .c5 .c8 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .c5 .c10 {
+    text-align: left;
+    padding: 0;
+  }
+
+  .c5 .c10 .c12 {
+    display: block;
+    font-size: 0.75em;
+    line-height: 1.2;
+  }
+}
+
 <div>
   <section>
     <header
@@ -322,12 +368,12 @@ exports[`Payments should render when transactions are present 2`] = `
           <th
             class="c6"
           >
-            table.header.customer
+            table.header.customerName
           </th>
           <th
             class="c6"
           >
-            table.header.merchant
+            table.header.merchantName
           </th>
           <th
             class="c7"
@@ -354,35 +400,60 @@ exports[`Payments should render when transactions are present 2`] = `
       </thead>
       <tbody>
         <tr
-          class="c8"
+          class="c8 c9"
           title="Click to open payment details"
         >
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.customerName
+            </label>
             Alfred de Musset
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.merchantName
+            </label>
             Super Merchant
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.amount
+            </label>
             100340
              €
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.created
+            </label>
             Wed May 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.status
+            </label>
             <span
-              class="c11"
+              class="c15"
               type="error"
             >
               status.default
@@ -390,35 +461,60 @@ exports[`Payments should render when transactions are present 2`] = `
           </td>
         </tr>
         <tr
-          class="c8"
+          class="c8 c9"
           title="Click to open payment details"
         >
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.customerName
+            </label>
             Nicolas Boileau
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.merchantName
+            </label>
             Super Merchant
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.amount
+            </label>
             66600
              €
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.created
+            </label>
             Fri Mar 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.status
+            </label>
             <span
-              class="c11"
+              class="c15"
               type="error"
             >
               status.default
@@ -426,35 +522,60 @@ exports[`Payments should render when transactions are present 2`] = `
           </td>
         </tr>
         <tr
-          class="c8"
+          class="c8 c9"
           title="Click to open payment details"
         >
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.customerName
+            </label>
             Georges Sand
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.merchantName
+            </label>
             Super Merchant
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.amount
+            </label>
             30250
              €
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.created
+            </label>
             Tue Jan 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.status
+            </label>
             <span
-              class="c12"
+              class="c16"
               type="info"
             >
               status.in_progress
@@ -462,35 +583,60 @@ exports[`Payments should render when transactions are present 2`] = `
           </td>
         </tr>
         <tr
-          class="c8"
+          class="c8 c9"
           title="Click to open payment details"
         >
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.customerName
+            </label>
             Charles Baudelaire
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.merchantName
+            </label>
             Super Merchant
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.amount
+            </label>
             87600
              €
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.created
+            </label>
             Sat Jun 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.status
+            </label>
             <span
-              class="c12"
+              class="c16"
               type="info"
             >
               status.in_progress
@@ -498,35 +644,60 @@ exports[`Payments should render when transactions are present 2`] = `
           </td>
         </tr>
         <tr
-          class="c8"
+          class="c8 c9"
           title="Click to open payment details"
         >
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.customerName
+            </label>
             Victor Hugo
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.merchantName
+            </label>
             Super Merchant
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.amount
+            </label>
             45900
              €
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.created
+            </label>
             Fri Apr 01 2022 00:00:00 GMT+0200 (Central European Summer Time)
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.status
+            </label>
             <span
-              class="c13"
+              class="c17"
               type="default"
             >
               status.not_started
@@ -534,35 +705,60 @@ exports[`Payments should render when transactions are present 2`] = `
           </td>
         </tr>
         <tr
-          class="c8"
+          class="c8 c9"
           title="Click to open payment details"
         >
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.customerName
+            </label>
             Marguerite Duras
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.merchantName
+            </label>
             Super Merchant
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.amount
+            </label>
             176490
              €
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.created
+            </label>
             Sat Jun 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.status
+            </label>
             <span
-              class="c14"
+              class="c18"
               type="success"
             >
               status.paid
@@ -570,35 +766,60 @@ exports[`Payments should render when transactions are present 2`] = `
           </td>
         </tr>
         <tr
-          class="c8"
+          class="c8 c9"
           title="Click to open payment details"
         >
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.customerName
+            </label>
             Guy de Maupassant
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.merchantName
+            </label>
             Super Merchant
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.amount
+            </label>
             35200
              €
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.created
+            </label>
             Fri Feb 04 2022 00:00:00 GMT+0100 (Central European Standard Time)
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.status
+            </label>
             <span
-              class="c14"
+              class="c18"
               type="success"
             >
               status.paid
@@ -606,35 +827,60 @@ exports[`Payments should render when transactions are present 2`] = `
           </td>
         </tr>
         <tr
-          class="c8"
+          class="c8 c9"
           title="Click to open payment details"
         >
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.customerName
+            </label>
             Marcel Proust
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.merchantName
+            </label>
             Super Merchant
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.amount
+            </label>
             80000
              €
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.created
+            </label>
             Mon Jul 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.status
+            </label>
             <span
-              class="c14"
+              class="c18"
               type="success"
             >
               status.paid
@@ -642,35 +888,60 @@ exports[`Payments should render when transactions are present 2`] = `
           </td>
         </tr>
         <tr
-          class="c8"
+          class="c8 c9"
           title="Click to open payment details"
         >
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.customerName
+            </label>
             Jean de La Fontaine
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.merchantName
+            </label>
             Super Merchant
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.amount
+            </label>
             7860
              €
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.created
+            </label>
             Wed May 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.status
+            </label>
             <span
-              class="c14"
+              class="c18"
               type="success"
             >
               status.paid
@@ -678,35 +949,60 @@ exports[`Payments should render when transactions are present 2`] = `
           </td>
         </tr>
         <tr
-          class="c8"
+          class="c8 c9"
           title="Click to open payment details"
         >
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.customerName
+            </label>
             Gustave Flaubert
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.merchantName
+            </label>
             Super Merchant
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.amount
+            </label>
             54600
              €
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.created
+            </label>
             Wed May 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.status
+            </label>
             <span
-              class="c12"
+              class="c16"
               type="info"
             >
               status.ready
@@ -714,35 +1010,60 @@ exports[`Payments should render when transactions are present 2`] = `
           </td>
         </tr>
         <tr
-          class="c8"
+          class="c8 c9"
           title="Click to open payment details"
         >
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.customerName
+            </label>
             Albert Camus
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.merchantName
+            </label>
             Super Merchant
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.amount
+            </label>
             155800
              €
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.created
+            </label>
             Mon Apr 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.status
+            </label>
             <span
-              class="c12"
+              class="c16"
               type="info"
             >
               status.ready
@@ -750,35 +1071,60 @@ exports[`Payments should render when transactions are present 2`] = `
           </td>
         </tr>
         <tr
-          class="c8"
+          class="c8 c9"
           title="Click to open payment details"
         >
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.customerName
+            </label>
             Émile Zola
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.merchantName
+            </label>
             Super Merchant
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.amount
+            </label>
             356050
              €
           </td>
           <td
-            class="c9"
+            class="c10 c11"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.created
+            </label>
             Mon Apr 04 2022 00:00:00 GMT+0200 (Central European Summer Time)
           </td>
           <td
-            class="c10"
+            class="c10 c14"
           >
+            <label
+              class="c12 c13"
+            >
+              table.header.status
+            </label>
             <span
-              class="c12"
+              class="c16"
               type="info"
             >
               status.ready

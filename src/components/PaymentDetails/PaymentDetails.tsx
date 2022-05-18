@@ -20,6 +20,18 @@ const Container = styled.div`
   ${Badge} {
     font-size: 1rem;
   }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    ${Label} + span {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    ${Badge} {
+      font-size: 0.8rem;
+    }
+  }
 `;
 
 export const PaymentDetails = ({
@@ -30,13 +42,13 @@ export const PaymentDetails = ({
   <Container>
     <div>
       <Label>
-        <FormattedMessage id="label.customer" defaultMessage="Customer" />
+        <FormattedMessage id="label.customerName" defaultMessage="Customer" />
       </Label>
       <span>{payment.customer_name}</span>
     </div>
     <div>
       <Label>
-        <FormattedMessage id="label.merchant" defaultMessage="Merchant" />
+        <FormattedMessage id="label.merchantName" defaultMessage="Merchant" />
       </Label>
       <span>{payment.merchant.name}</span>
     </div>

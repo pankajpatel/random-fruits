@@ -9,6 +9,7 @@ import { Installments } from '@app/components/Installments/Installments';
 import { usePayment } from '@app/hooks/usePayment';
 import { ContainerOnlyWithGutter } from '@app/ds/Container';
 import { Button } from '@app/ds/Button';
+import { Link } from 'wouter';
 
 export const Payment = ({ id }: { id: Payment['id'] }): JSX.Element => {
   const { payment, isLoading, isError } = usePayment(id);
@@ -16,7 +17,7 @@ export const Payment = ({ id }: { id: Payment['id'] }): JSX.Element => {
   return (
     <section>
       <PageHeader>
-        <Button as="a" href="/payments">
+        <Button as={Link} href="/payments">
           <svg
             height="1rem"
             version="1.1"

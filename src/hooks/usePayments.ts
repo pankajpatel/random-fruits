@@ -21,7 +21,7 @@ const getSortDirection = (
   key: keyof PaymentInList,
   direction?: SortDirection,
   previousSortOrder?: SortOrder
-) => {
+): SortDirection => {
   if (direction) {
     return direction;
   }
@@ -61,6 +61,7 @@ export const usePayments = (): UsePayments &
       const sortedRows = [...(data ?? [])].sort(
         SORT_FUNCTIONS[direction]((obj) => obj[sortByKey])
       );
+
       setSortOrder([sortByKey, direction]);
       setPayments(sortedRows);
     },
@@ -68,12 +69,10 @@ export const usePayments = (): UsePayments &
   );
 
   useEffect(() => {
-    if (data && sortOrder?.[0] !== 'status' && sortOrder?.[1] !== 'ASC') {
+    if (data && !sortOrder) {
       sortRows('status', SORT_DIRECTIONS.ASC);
     }
-    // Adding sortRows to the dependencies array will cause the infinite loop as the callback is called again
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data]);
+  }, [data, sortOrder, sortRows]);
 
   const filter = (_val: string) => {
     const val = _val.toLowerCase();

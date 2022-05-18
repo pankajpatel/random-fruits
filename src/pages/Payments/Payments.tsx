@@ -69,7 +69,7 @@ const CellConfig: Array<TableCell<PaymentInList>> = [
 export const Payments = (): JSX.Element => {
   const { payments, isError, isLoading, sortRows, filter } = usePayments();
 
-  const [, gotTo] = useLocation();
+  const [, goTo] = useLocation();
 
   return (
     <section>
@@ -83,7 +83,7 @@ export const Payments = (): JSX.Element => {
         <Table
           rows={payments}
           cells={CellConfig}
-          onRowClick={(row: PaymentInList) => gotTo(`/payments/${row.id}`)}
+          onRowClick={(row: PaymentInList) => goTo(`/payments/${row.id}`)}
           onHeaderClick={(key: keyof PaymentInList) => {
             sortRows(key as keyof PaymentInList);
           }}

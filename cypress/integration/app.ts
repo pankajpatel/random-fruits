@@ -107,7 +107,7 @@ describe('Payments App: Happy Path', () => {
   });
 
   it('should take user to payments list on clicking back', () => {
-    cy.get('header a[href="/payments"]').click();
+    cy.get('header [href="/payments"]').click();
 
     // Redirected to initial payments list
     cy.location().should((loc) => {
